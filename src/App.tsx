@@ -1,20 +1,34 @@
-import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import { BrowseMenus } from './components/customer/BrowseMenus';
 import { LoginPage } from './components/common/LoginPage';
+import { Header } from './components/common/Header';
 import { Footer } from './components/common/Footer';
 import { DeliveryInstructions } from './components/delivery/DeliveryInstructions';
 import { ManageMenus } from './components/restaurant/ManageMenus';
+import { OnlineTracking } from "./components/customer/OnlineTracking";
+
+function AppRoutes() {
+  return (
+    <>
+      <Header />
+      <Outlet />
+    </>
+  );
+}
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/browse-menus" element={<BrowseMenus/>}></Route>
-          <Route path="/delivery-instructions" element={<DeliveryInstructions/>}></Route>
-          <Route path="/manage-menus" element={<ManageMenus/>}></Route>
-          <Route path="/" element={<LoginPage/>}></Route>
+          <Route path="/" element={<LoginPage />} />
+          <Route element={<AppRoutes />}>
+            <Route path="/browse-menus" element={<BrowseMenus />} />
+            <Route path="/delivery-instructions" element={<DeliveryInstructions />} />
+            <Route path="/manage-menus" element={<ManageMenus />} />
+            <Route path="/online-tracking" element={<OnlineTracking />} />
+          </Route>
         </Routes>
         <Footer />
       </BrowserRouter>
