@@ -14,9 +14,12 @@ export function OnlineTracking() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setOrderStatuses((prevStatuses) => 
+      setOrderStatuses((prevStatuses) =>
         prevStatuses.map((status, index) => {
-          if (!status.isCompleted && (index === 0 || prevStatuses[index - 1].isCompleted)) {
+          if (
+            !status.isCompleted &&
+            (index === 0 || prevStatuses[index - 1].isCompleted)
+          ) {
             return { ...status, isCompleted: true, time: new Date() };
           }
           return status;
@@ -37,19 +40,25 @@ export function OnlineTracking() {
         </h3>
         <img src={locationImage} alt="Location" className="locationImage" />
         <div className="box">
-        <div className="status-box">
-        {orderStatuses.map((status, index) => (
-          <div className="status" key={status.name}>
-            <img
-              src={status.isCompleted ? DoneAllAltRoundIcon : NotAllAltRoundIcon}
-              alt={status.isCompleted ? "Done icon" : "Not Done icon"}
-              style={{ width: "110px", height: "70px" }}
-            />
-            <div className="status-content">
-              <span>{status.name}</span>
-              <span style={{ color: "rgba(0, 0, 0, 0.3)" }}>
-              {status.isCompleted && status.time ? status.time.toLocaleString() : "-"}
-              </span>
+          <div className="status-box">
+            {orderStatuses.map((status, index) => (
+              <div className="status" key={status.name}>
+                <img
+                  src={
+                    status.isCompleted
+                      ? DoneAllAltRoundIcon
+                      : NotAllAltRoundIcon
+                  }
+                  alt={status.isCompleted ? "Done icon" : "Not Done icon"}
+                  style={{ width: "110px", height: "70px" }}
+                />
+                <div className="status-content">
+                  <span>{status.name}</span>
+                  <span style={{ color: "rgba(0, 0, 0, 0.3)" }}>
+                    {status.isCompleted && status.time
+                      ? status.time.toLocaleString()
+                      : "-"}
+                  </span>
                 </div>
               </div>
             ))}
@@ -58,8 +67,24 @@ export function OnlineTracking() {
             <span className="bold-text">Delivery Staff Information</span>
             <div className="square-container">
               <div className="square">
-                <input type="text" placeholder="Name" />
-                <input type="text" placeholder="Phone" />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <label htmlFor="nameField" style={{ marginRight: "10px" }}>
+                    Name:{" "}
+                  </label>
+                  <input type="text" id="nameField" placeholder="Name" />
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <label htmlFor="phoneField" style={{ marginRight: "10px" }}>
+                    Phone:{" "}
+                  </label>
+                  <input type="text" id="phoneField" placeholder="Phone" />
+                </div>
               </div>
               <button className="button">View Order</button>
             </div>
