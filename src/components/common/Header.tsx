@@ -13,7 +13,7 @@ import {
   DropdownItem,
   Button,
 } from 'reactstrap';
-import { FaShoppingCart, FaMapMarkerAlt, FaUserAlt } from 'react-icons/fa'; // 引入图标
+import { FaShoppingCart, FaMapMarkerAlt, FaUserAlt } from 'react-icons/fa';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,9 +29,9 @@ export function Header() {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar></Nav>
-          <Button color="link"><FaMapMarkerAlt /> Location</Button>
-          <NavLink href="/profile" style={{ color: '#333', marginRight: '10px' }}>
-            <Button color="link"><FaUserAlt /> Profile</Button>
+          <Button color="link" style={{ color: '#333', textDecoration: 'none' }}><FaMapMarkerAlt/> Sha Tin</Button>
+          <NavLink href="/profile" style={{ color: '#333'}}>
+            <Button color="link" style={{ color: '#333', textDecoration: 'none'}}><FaUserAlt style={{marginRight: '5px'}}/>My location</Button>
           </NavLink>
           <Nav>
             <UncontrolledDropdown nav inNavbar>
