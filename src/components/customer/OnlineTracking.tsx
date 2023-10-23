@@ -77,13 +77,13 @@ export function OnlineTracking() {
                   <label htmlFor="nameField" style={{ marginRight: "10px" }}>
                     Name:{" "}
                   </label>
-                  <input type="text" id="nameField" placeholder="Name" />
+                  <input type="text" id="nameField" placeholder="Name" value={"Jane Doe"}/>
                 </div>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <label htmlFor="phoneField" style={{ marginRight: "10px" }}>
                     Phone:{" "}
                   </label>
-                  <input type="text" id="phoneField" placeholder="Phone" />
+                  <input type="text" id="phoneField" placeholder="Phone" value={"123-456-7890"}/>
                 </div>
               </div>
               <button className="button">View Order</button>
