@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./OnlineTracking.css";
 import locationImage from "../../images/Location.png";
-import DoneAllAltRoundIcon from "../../done-all-alt-round.svg";
-import NotAllAltRoundIcon from "../../Not_done.svg";
+import DoneAllAltRoundIcon from "../../svg/done-all-alt-round.svg";
+import NotAllAltRoundIcon from "../../svg/Not_done.svg";
 
 export function OnlineTracking() {
   const [orderStatuses, setOrderStatuses] = useState([
