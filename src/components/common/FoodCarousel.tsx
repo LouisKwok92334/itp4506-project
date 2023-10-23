@@ -7,20 +7,24 @@ import {
   CarouselCaption,
 } from 'reactstrap';
 
+
 const items = [
   {
-    src: 'https://picsum.photos/id/123/1200/400',
+    src: require("../../images/food-poster.webp"),
     altText: 'Slide 1',
+    caption: 'Caption for Slide 1',
     key: 1,
   },
   {
-    src: 'https://picsum.photos/id/456/1200/400',
+    src: require("../../images/food-poster2.png"),
     altText: 'Slide 2',
+    caption: 'Caption for Slide 2',
     key: 2,
   },
   {
-    src: 'https://picsum.photos/id/678/1200/400',
+    src: require("../../images/food-poster.png"),
     altText: 'Slide 3',
+    caption: 'Caption for Slide 3',
     key: 3,
   },
 ];
@@ -53,11 +57,19 @@ export function FoodCarousel(args: Record<string, unknown>) {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-<img src={item.src} alt={item.altText} style={{width: '97%', height: '420px', borderRadius: '25px'}} />
+        <img 
+          src={item.src} 
+          alt={item.altText} 
+          style={{
+            width: '100%', 
+            height: '400px', 
+            objectFit: 'cover', 
+            borderRadius: '25px'
+          }} 
+        />
       </CarouselItem>
     );
   });
-
   
   return (
     <Carousel

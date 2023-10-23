@@ -14,10 +14,6 @@
     display: flex;
   }
 
-  .Restaurant-box {
-    margin-right: 20px;
-  }
-
   .restaurant-image {
     width: 300px; 
     height: 200px; 
@@ -39,7 +35,7 @@
     display: flex;
     justify-content: center;
     align-items: center; 
-    flex-direction: row; /* Change this to row */
+    flex-direction: row; 
   }
   
   .favourite-contect-box {
@@ -56,5 +52,5 @@
   }
 
   .first-slide {
-    margin-left: 0 !important; /* Adjust as needed */
+    margin-left: 0 !important; 
   }

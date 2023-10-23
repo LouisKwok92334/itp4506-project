@@ -20,39 +20,39 @@ import Chinese from "../../images/Chinese.png";
 export function BrowseMenus() {
   const sliderRef = useRef<Slider | null>(null); // Use Slider type here
   var settings = {
-    infinite: false, 
+    infinite: false,
     speed: 500,
-    slidesToShow: 4, 
-    slidesToScroll: 1, 
+    slidesToShow: 4,
+    slidesToScroll: 1,
   };
 
   const next = () => {
     sliderRef.current?.slickNext();
-  }
+  };
 
   const previous = () => {
     sliderRef.current?.slickPrev();
-  }
-  
+  };
+
   return (
     <div className="BrowseMenus">
       <FoodCarousel />
       <div className="restaurant-section">
         <div className="header">
-          <h2>Popular Restaurant</h2>
+          <h2>
+            <strong>Popular Restaurant</strong>
+          </h2>
           {/* <button onClick={previous}>Previous</button>
           <button onClick={next}>Next</button>  */}
           <a href="#" className="more-tab">
             more
           </a>
         </div>
-        <Slider ref={sliderRef} {...settings}> {/* Pass the reference to the Slider component */}
+        <Slider ref={sliderRef} {...settings}>
+          {" "}
+          {/* Pass the reference to the Slider component */}
           <div className="Restaurant-box">
-            <img
-              className="restaurant-image"
-              src={GoldLabel}
-              alt="GoldLabel"
-            />
+            <img className="restaurant-image" src={GoldLabel} alt="GoldLabel" />
             <div className="contect-box">
               <h3>Gold Label Restaurant</h3>
               <p>4.4/5 (3000+)</p>
@@ -62,11 +62,7 @@ export function BrowseMenus() {
             </div>
           </div>
           <div className="Restaurant-box">
-            <img
-              className="restaurant-image"
-              src={Zeppelin}
-              alt="Zeppelin"
-            />
+            <img className="restaurant-image" src={Zeppelin} alt="Zeppelin" />
             <div className="contect-box">
               <h3>Zeppelin Hot Dog Shop</h3>
               <p>4.5/5 (3000+)</p>
@@ -76,11 +72,7 @@ export function BrowseMenus() {
             </div>
           </div>
           <div className="Restaurant-box">
-            <img
-              className="restaurant-image"
-              src={Gin}
-              alt="Gin"
-            />
+            <img className="restaurant-image" src={Gin} alt="Gin" />
             <div className="contect-box">
               <h3>Gin Curry</h3>
               <p>3/5 (3000+)</p>
@@ -104,13 +96,8 @@ export function BrowseMenus() {
               <p>HK$ 10 Delivery fee</p>
             </div>
           </div>
-
           <div className="Restaurant-box">
-            <img
-              className="restaurant-image"
-              src={SamGor}
-              alt="SamGor"
-            />
+            <img className="restaurant-image" src={SamGor} alt="SamGor" />
             <div className="contect-box">
               <h3>TamJai SamGor</h3>
               <p>5/5 (3000+)</p>
@@ -120,11 +107,7 @@ export function BrowseMenus() {
             </div>
           </div>
           <div className="Restaurant-box">
-            <img
-              className="restaurant-image"
-              src={Tomato}
-              alt="Tomato"
-            />
+            <img className="restaurant-image" src={Tomato} alt="Tomato" />
             <div className="contect-box">
               <h3>Tomato Club</h3>
               <p>3.2/5 (3000+)</p>
@@ -137,7 +120,9 @@ export function BrowseMenus() {
       </div>
 
       <div className="header">
-        <h2>Your favourite cuisines</h2>
+        <h2>
+          <strong>Your favourite cuisines</strong>{" "}
+        </h2>
         <a href="#" className="more-tab">
           more
         </a>
@@ -145,34 +130,21 @@ export function BrowseMenus() {
       <Slider {...{ ...settings, slidesToShow: 5 }}>
         <div className="favourite-box">
           <div>
-            <img
-              className="favourite-image"
-              src={pizza}
-              alt="pizza"
-            />
+            <img className="favourite-image" src={pizza} alt="pizza" />
           </div>
           <div className="favourite-contect-box">
             <h3>Pizza</h3>
           </div>
         </div>
-
         <div className="favourite-box">
-          <img
-            className="favourite-image"
-            src={cake}
-            alt="cake"
-          />
+          <img className="favourite-image" src={cake} alt="cake" />
           <div className="favourite-contect-box">
             <h3>Cake</h3>
           </div>
         </div>
         <div className="favourite-box">
           <div>
-            <img
-              className="favourite-image"
-              src={coffee}
-              alt="coffee"
-            />
+            <img className="favourite-image" src={coffee} alt="coffee" />
           </div>
           <div className="favourite-contect-box">
             <h3>Coffee</h3>
@@ -180,11 +152,7 @@ export function BrowseMenus() {
         </div>
         <div className="favourite-box">
           <div>
-            <img
-              className="favourite-image"
-              src={sushi}
-              alt="sushi"
-            />
+            <img className="favourite-image" src={sushi} alt="sushi" />
           </div>
           <div className="favourite-contect-box">
             <h3>Sushi</h3>
@@ -193,11 +161,7 @@ export function BrowseMenus() {
 
         <div className="favourite-box">
           <div>
-            <img
-              className="favourite-image"
-              src={Chicken}
-              alt="Chicken"
-            />
+            <img className="favourite-image" src={Chicken} alt="Chicken" />
           </div>
           <div className="favourite-contect-box">
             <h3>Chicken</h3>
@@ -205,11 +169,7 @@ export function BrowseMenus() {
         </div>
         <div className="favourite-box">
           <div>
-            <img
-              className="favourite-image"
-              src={Chinese}
-              alt="Restaurant A"
-            />
+            <img className="favourite-image" src={Chinese} alt="Restaurant A" />
           </div>
           <div className="favourite-contect-box">
             <h3>Chinese</h3>
