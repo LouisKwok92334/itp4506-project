@@ -54,3 +54,8 @@
   .first-slide {
     margin-left: 0 !important; 
   }
+
+  .nav-link a {
+    color: #333;
+    text-decoration: none;
+  }

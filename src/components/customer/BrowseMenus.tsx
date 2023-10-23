@@ -17,6 +17,7 @@ import coffee from "../../images/coffee.png";
 import sushi from "../../images/sushi.png";
 import Chicken from "../../images/Chicken.png";
 import Chinese from "../../images/Chinese.png";
+import { NavLink } from "react-router-dom";
 export function BrowseMenus() {
   const sliderRef = useRef<Slider | null>(null); // Use Slider type here
   var settings = {
@@ -96,16 +97,21 @@ export function BrowseMenus() {
               <p>HK$ 10 Delivery fee</p>
             </div>
           </div>
-          <div className="Restaurant-box">
-            <img className="restaurant-image" src={SamGor} alt="SamGor" />
-            <div className="contect-box">
-              <h3>TamJai SamGor</h3>
-              <p>5/5 (3000+)</p>
-              <p>$$$</p>
-              <p>Cha Chaan Teng</p>
-              <p>HK$ 10 Delivery fee</p>
+          <NavLink 
+            to="/restaurant-menus" 
+            className="nav-link"
+          >
+            <div className="Restaurant-box">
+              <img className="restaurant-image" src={SamGor} alt="SamGor" />
+              <div className="contect-box">
+                <h3>TamJai SamGor</h3>
+                <p>5/5 (3000+)</p>
+                <p>$$$</p>
+                <p>Cha Chaan Teng</p>
+                <p>HK$ 10 Delivery fee</p>
+              </div>
             </div>
-          </div>
+          </NavLink>
           <div className="Restaurant-box">
             <img className="restaurant-image" src={Tomato} alt="Tomato" />
             <div className="contect-box">

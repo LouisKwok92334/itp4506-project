@@ -13,8 +13,6 @@ import set4 from '../../images/tamJai-images/Value_Set_for_4.jpg';
 import "./RestaurantMenu.css";
 
 export function RestaurantMenu() {
-    const foodImage = [chicken, minced_pork, pickled_cabbage, egg, rice_noodles, sliced_pork, set2, set3, set4];
-
     return (
       <div className="RestaurantMenu">
         <h2>TamJai SamGor Mixian</h2>
