@@ -74,3 +74,17 @@
   width: 100%;
   text-align: right;
 }
+/* CSS */
+
+.ConfirmPayment,
+.PaymentSuccessful {
+  transition: opacity 0.3s ease-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}

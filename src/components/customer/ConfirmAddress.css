@@ -4,6 +4,12 @@
   text-align: left;
 }
 
+.stretch-image {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* This will stretch the image */
+}
+
 .bold-text {
   font-weight: bold;
   margin: 20px 10px;

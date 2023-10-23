@@ -18,7 +18,7 @@ return (
 <div className={`Address ${slided ? "slided" : ""}`}>
       <div className="ConfirmAddress">
         <h2 className="bold-text">Delivery address</h2>
-        <img src={locationImage} alt="Location" />
+        <img src={locationImage} alt="Location" className="stretch-image"/>
         <div className="address-container">
           <input className="address-input" type="text" placeholder="Enter your address" />
           <button className="button">Edit</button>
