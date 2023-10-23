@@ -6,7 +6,7 @@ export function ConfirmPayment() {
   const navigate = useNavigate();
 
   const handlePaymentConfirmation = () => {
-    navigate("/confirm-order");
+    navigate("/payment-successful");
   };
 
   return (
