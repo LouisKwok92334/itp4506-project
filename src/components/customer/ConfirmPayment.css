@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Add this line */
+  width: 100%; 
 }
 
 .order-details-container,
@@ -30,44 +30,44 @@
 }
 
 .edit-button {
-    background-color: #5c5cfd;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 25px;
-    transition: background-color 0.3s ease; /* Add transition for smoother color change */
-  }
-  
-  .edit-button:hover {
-    background-color: #4a4ae8; /* Change color on hover */
-  }
+  background-color: #5c5cfd;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: #4a4ae8;
+}
 
 .confirm-button {
   background-color: #5c5cfd;
   border: none;
   color: white;
-  padding: 15px 30px; /* Increase padding */
+  padding: 15px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px; /* Increase font size */
-  margin: 20px 2px; /* Increase margin */
+  font-size: 16px;
+  margin: 20px 2px;
   cursor: pointer;
-  border-radius: 30px; /* Increase border radius */
-  transition: all 0.3s ease-out; /* Add transition */
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow */
+  border-radius: 30px;
+  transition: all 0.3s ease-out;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 .confirm-button:hover {
-  background-color: #4a4ae8; /* Change color on hover */
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-  transform: scale(1.05); /* Slightly increase size on hover */
+  background-color: #4a4ae8;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
 .button-container {
@@ -87,4 +87,43 @@
 
 .fade-in {
   opacity: 1;
+}
+
+
+.payment-details-container {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.input-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.input-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.input:focus {
+  box-shadow: 0 0 15px 4px rgba(66, 133, 244, 0.5);
+  outline: none;
 }
