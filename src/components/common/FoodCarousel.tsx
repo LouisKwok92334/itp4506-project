@@ -53,11 +53,12 @@ export function FoodCarousel(args: Record<string, unknown>) {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img src={item.src} alt={item.altText} />
+<img src={item.src} alt={item.altText} style={{width: '97%', height: '420px', borderRadius: '25px'}} />
       </CarouselItem>
     );
   });
 
+  
   return (
     <Carousel
       activeIndex={activeIndex}
