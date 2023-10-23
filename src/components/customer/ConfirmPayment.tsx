@@ -27,7 +27,7 @@ export function ConfirmPayment() {
             <img
               src={ginRestImage}
               alt="Restaurant"
-              className="restaurant-image"
+              className="img"
             />
             <div className="text-container">
               <h3 className="restaurant-name">Restaurant Name</h3>

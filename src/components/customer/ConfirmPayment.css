@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; 
+  width: 100%;
 }
 
 .order-details-container,
@@ -29,24 +29,7 @@
   align-items: center;
 }
 
-.edit-button {
-  background-color: #5c5cfd;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 25px;
-  transition: background-color 0.3s ease;
-}
 
-.edit-button:hover {
-  background-color: #4a4ae8;
-}
 
 .confirm-button {
   background-color: #5c5cfd;
@@ -74,7 +57,6 @@
   width: 100%;
   text-align: right;
 }
-/* CSS */
 
 .ConfirmPayment,
 .PaymentSuccessful {
@@ -89,14 +71,13 @@
   opacity: 1;
 }
 
-
 .payment-details-container {
   border-radius: 4px;
 }
 
 .input-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: repeat(3, 1fr); 
   gap: 20px;
 }
 
@@ -129,14 +110,16 @@
 
 .content-container {
   display: flex;
-  justify-content: flex-start; 
+  justify-content: flex-start;
 }
 
-.restaurant-image {
+.img{
   width: 30%;
   height: auto;
   margin-right: 70px;
+  border-radius: 25px;
 }
 .text-container {
-  width: 48%; 
+  width: 48%;
 }
+

@@ -4,10 +4,18 @@
   align-items: center;
   justify-content: center;
   font-size: 16px;
+  width: 100%;     /* Increase the width to 100% */
+  max-width: 1200px; 
 }
 
 .bold-text {
   font-weight: bold;
+}
+
+.status-box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;   
 }
 
 .text-box {
