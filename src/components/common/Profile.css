@@ -21,8 +21,18 @@
   
   .form-group {
     display: flex;
+    position: relative;
     flex-direction: column;
     margin-bottom: 1.5rem;
+  }
+
+  .profile-eye-icon {
+    position: absolute;
+    font-size: 20px;
+    right: 12px;
+    top: 70%;
+    transform: translateY(-50%);
+    cursor: pointer;
   }
   
   .form-group label {
@@ -51,4 +61,8 @@
   
   .profile-card button:hover {
     background-color: #0056b3;
+  }
+
+  .profile-save {
+    margin-top: 10px;
   }

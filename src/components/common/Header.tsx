@@ -14,6 +14,7 @@ import {
   Button,
 } from 'reactstrap';
 import { FaShoppingCart, FaMapMarkerAlt, FaUserAlt } from 'react-icons/fa';
+import { FaHeart, FaHistory, FaUser, FaSignOutAlt } from 'react-icons/fa';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,32 +48,34 @@ export function Header() {
                 <div style={{ fontWeight: 'bold', textAlign:'center', padding:'10px'}}>Bosco</div>
                 <DropdownItem divider />
                 <NavLink href="/profile">
-                  <DropdownItem style={{ padding: '0 15px' }}>My Favourites</DropdownItem>
-                </NavLink>
-                <DropdownItem divider />
-                <NavLink href="/profile">
-                  <DropdownItem style={{ padding: '0 15px' }}>Order History</DropdownItem>
-                </NavLink>
-                <DropdownItem divider />
-                <NavLink href="/profile">
-                  <DropdownItem style={{ padding: '0 15px' }}>User info</DropdownItem>
-                </NavLink>
+                <DropdownItem style={{ padding: '0 15px' }}>
+                  <FaHeart style={{ marginRight: '10px' }} /> My Favourites
+                </DropdownItem>
+              </NavLink>
+              <DropdownItem divider />
+              <NavLink href="/profile">
+                <DropdownItem style={{ padding: '0 15px' }}>
+                  <FaHistory style={{ marginRight: '10px' }} /> Order History
+                </DropdownItem>
+              </NavLink>
+              <DropdownItem divider />
+              <NavLink href="/profile">
+                <DropdownItem style={{ padding: '0 15px' }}>
+                  <FaUser style={{ marginRight: '10px' }} /> User info
+                </DropdownItem>
+              </NavLink>
+              <DropdownItem divider />
+              <NavLink href="/">
+                <DropdownItem style={{ padding: '0 15px' }}>
+                  <FaSignOutAlt style={{ marginRight: '10px' }} /> Logout
+                </DropdownItem>
+              </NavLink>
               </DropdownMenu>
             </UncontrolledDropdown>
           </Nav>
-          <Nav>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret style={{ color: '#333' }}>
-                <FaShoppingCart /> Cart
-              </DropdownToggle>
-              <DropdownMenu right style={{ right: '-20px' }}>
-                <DropdownItem>Item 1</DropdownItem>
-                <DropdownItem>Item 2</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem>Checkout</DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-          </Nav>
+          <Button color="link" style={{ color: '#333', textDecoration: 'none' }}>
+            <FaShoppingCart style={{marginRight: '5px'}} />Cart
+          </Button>
         </Collapse>
       </Navbar>
     </div>

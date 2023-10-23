@@ -3,7 +3,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 import { AiFillCheckCircle } from 'react-icons/ai';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { BiSolidError } from 'react-icons/bi';
-import usersData from '../../users.json';
+import usersData from '../../json/users.json';
 import Logo from "../../images/Logo.png";
 import "./LoginPage.css";
 import { useNavigate } from 'react-router-dom';

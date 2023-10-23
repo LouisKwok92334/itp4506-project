@@ -8,6 +8,7 @@ import { DeliveryInstructions } from './components/delivery/DeliveryInstructions
 import { ManageMenus } from './components/restaurant/ManageMenus';
 import { OnlineTracking } from "./components/customer/OnlineTracking";
 import { Profile } from "./components/common/profile";
+import { RestaurantMenu } from "./components/common/RestaurantMenu";
 
 function AppRoutes() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route element={<AppRoutes />}>
             <Route path="/profile" element={<Profile />} />
             <Route path="/browse-menus" element={<BrowseMenus />} />
+            <Route path="/restaurant-menus" element={<RestaurantMenu />} />
             <Route path="/delivery-instructions" element={<DeliveryInstructions />} />
             <Route path="/manage-menus" element={<ManageMenus />} />
             <Route path="/online-tracking" element={<OnlineTracking />} />

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Dan Dan Noodles",
+        "description": "Classic Dan Dan noodles with adjustable spiciness level.",
+        "price": 38,
+        "image": "../../images/tamJai-images/Rice_Noodles.jpg"
+    },
+    {
+        "name": "Fish Dumplings",
+        "description": "Delicious fish dumplings with a slight spicy kick.",
+        "price": 45,
+        "image": "https://example.com/images/fish_dumplings.jpg"
+    },
+    {
+        "name": "Spicy Wontons",
+        "description": "Wontons served in a spicy Sichuan sauce.",
+        "price": 48,
+        "image": "https://example.com/images/spicy_wontons.jpg"
+    },
+    {
+        "name": "Braised Beef Noodles",
+        "description": "Rich and hearty braised beef with noodles.",
+        "price": 58,
+        "image": "https://example.com/images/braised_beef_noodles.jpg"
+    },
+    {
+        "name": "Curry Fish Balls",
+        "description": "Traditional Hong Kong street food, curry fish balls.",
+        "price": 30,
+        "image": "https://example.com/images/curry_fish_balls.jpg"
+    }
+]
