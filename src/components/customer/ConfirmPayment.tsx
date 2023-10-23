@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./ConfirmPayment.css";
 import { useNavigate } from "react-router-dom";
+import ginRestImage from "../../images/Gin-rest.png";
 
 export function ConfirmPayment() {
   const navigate = useNavigate();
@@ -21,7 +22,26 @@ export function ConfirmPayment() {
         <h2 className="bold-text">Confirm Order</h2>
       </div>
       <div className="order-details-container">
-        <div className="square"></div>
+        <div className="square">
+          <div className="content-container">
+            <img
+              src={ginRestImage}
+              alt="Restaurant"
+              className="restaurant-image"
+            />
+            <div className="text-container">
+              <h3 className="restaurant-name">Restaurant Name</h3>
+              <ul className="food-list">
+                <li>Food Item 1</li>
+                <li>Food Item 2</li>
+                <li>Food Item 3</li>
+              </ul>
+              <hr className="divider" />
+              <p className="total-cost">Total cost: $XX.XX</p>
+              <p className="delivery-fee">Delivery fee: $X.XX</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div className="payment-header">
         <h2 className="bold-text">Confirm Payment</h2>

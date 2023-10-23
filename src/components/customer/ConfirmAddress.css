@@ -7,7 +7,7 @@
 .stretch-image {
   width: 100%;
   height: 100%;
-  object-fit: fill; /* This will stretch the image */
+  object-fit: fill; 
 }
 
 .bold-text {
@@ -41,8 +41,8 @@
   width: 100%;
   height: 150px;
   margin: 20px 0;
+  text-align: left; /* 这将使 `.square` 中的所有内容靠左对齐 */
 }
-
 .edit-button {
   background-color: #5c5cfd;
   border: none;
@@ -98,4 +98,11 @@
 
 .Address.slided {
   transform: translateX(-100%);
+}
+
+.detail-text {
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+  text-align: left; 
 }

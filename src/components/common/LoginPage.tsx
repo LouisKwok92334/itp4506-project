@@ -78,7 +78,7 @@ export function LoginPage() {
       setTimeout(() => {
         switch(userType) {
           case 'customer':
-            navigate('/confirm-address');
+            navigate('/confirm-address"');
             break;
           case 'restaurant':
             navigate('/manage-menus');
