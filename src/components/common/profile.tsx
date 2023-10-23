@@ -2,40 +2,46 @@ import "./Profile.css";
 
 export function Profile() {
   return (
-    <div className="profile">
-      <h3>User information</h3>
-      <h4>Profile</h4>
-      <div className="profile-form">
+    <div className="profile-container">
+      <div className="profile-card">
+        <h2>User Information</h2>
         <form>
-          <div className="profile-form-group">
-            <label htmlFor="name" className="profile-title">Name:</label>
-            <input type="text" className="form-control" />
-            <label htmlFor="phone" className="profile-title">Phone:</label>
-            <input type="phoneNumber" className="form-control" />
-            <label htmlFor="email" className="profile-title">Email:</label>
-            <input type="email" className="form-control" />
-            <label htmlFor="address" className="profile-title">Address:</label>
-            <input type="text" className="form-control" />
+          <div className="form-group">
+            <label>Name</label>
+            <input type="text" value="Bosco" required />
           </div>
-          <div className="profile-user-submit">
-            <button type="submit" className="btn btn-primary">Save</button>
+          <div className="form-group">
+            <label>Phone</label>
+            <input type="tel" value="098-765-4321" required />
           </div>
+          <div className="form-group">
+            <label>Email</label>
+            <input type="email" value="michael.smith@example.com" required />
+          </div>
+          <div className="form-group">
+            <label>Address</label>
+            <input type="text" value="123 Main St, City, State, ZI" required />
+          </div>
+          <button type="submit">Save</button>
         </form>
       </div>
-      <h4>Payment</h4>
-      <div className="payment-form">
-      <form>
-          <div className="profile-form-group">
-            <label htmlFor="card-number" className="profile-title">Card Number:</label>
-            <input type="text" className="form-control" />
-            <label htmlFor="expiry-date" className="profile-title">Expiry Date:</label>
-            <input type="date" className="form-control" />
-            <label htmlFor="cvv" className="profile-title">CVV:</label>
-            <input type="number" className="form-control" />
+
+      <div className="profile-card">
+        <h2>Payment Information</h2>
+        <form>
+          <div className="form-group">
+            <label>Card Number</label>
+            <input type="text" value="3690 2384 **** ****" required pattern="\d{16}" />
           </div>
-          <div className="profile-user-submit">
-            <button type="submit" className="btn btn-primary">Save</button>
+          <div className="form-group">
+            <label>Expiry Date</label>
+            <input type="month" required />
           </div>
+          <div className="form-group">
+            <label>CVV</label>
+            <input type="password" required pattern="\d{3}" />
+          </div>
+          <button type="submit">Save</button>
         </form>
       </div>
     </div>

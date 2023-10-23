@@ -4,6 +4,7 @@
       "type": "customer",
       "username": "Louis",
       "email": "johndoe@example.com",
+      "address": "123 Main St, City, State, ZIP",
       "phone": "123-456-7890",
       "password": "000"
     },
@@ -11,6 +12,7 @@
       "type": "customer",
       "username": "Bosco",
       "email": "michael.smith@example.com",
+      "address": "123 Main St, City, State, ZIP",
       "phone": "098-765-4321",
       "password": "123"
     },

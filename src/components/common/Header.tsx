@@ -31,7 +31,7 @@ export function Header() {
       zIndex: 1000, // Ensure the header is on top of other content
     }}>
       <Navbar light expand="md" style={{ padding: '5px 20px 15px 20px' }}>
-        <NavbarBrand href="/" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
+        <NavbarBrand href="/browse-menus" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
           <img src={logo} alt="Logo" style={{ height: '100px' }} />  
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
