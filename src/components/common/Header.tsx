@@ -21,7 +21,15 @@ export function Header() {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div style={{ borderBottom: '1px solid #333', backgroundColor: '#f8f9fa', marginBottom: '20px' }}>
+    <div style={{ 
+      borderBottom: '1px solid #333', 
+      backgroundColor: '#f8f9fa', 
+      marginBottom: '20px',
+      position: 'fixed', 
+      width: '100%', 
+      top: 0,
+      zIndex: 1000, // Ensure the header is on top of other content
+    }}>
       <Navbar color="light" light expand="md" style={{ padding: '5px 20px 15px 20px' }}>
         <NavbarBrand href="/" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
           <img src={logo} alt="Logo" style={{ height: '100px' }} />  

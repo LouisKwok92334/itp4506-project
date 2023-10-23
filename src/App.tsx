@@ -13,7 +13,9 @@ function AppRoutes() {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className="AppRoutes">
+        <Outlet />
+      </div>
     </>
   );
 }
