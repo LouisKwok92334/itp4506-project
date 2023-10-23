@@ -1,0 +1,76 @@
+.ConfirmPayment {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.payment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Add this line */
+}
+
+.order-details-container,
+.payment-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.square {
+  width: 100%;
+  height: 300px;
+  background: #b6b6b6;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.edit-button {
+    background-color: #5c5cfd;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease; /* Add transition for smoother color change */
+  }
+  
+  .edit-button:hover {
+    background-color: #4a4ae8; /* Change color on hover */
+  }
+
+.confirm-button {
+  background-color: #5c5cfd;
+  border: none;
+  color: white;
+  padding: 15px 30px; /* Increase padding */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px; /* Increase font size */
+  margin: 20px 2px; /* Increase margin */
+  cursor: pointer;
+  border-radius: 30px; /* Increase border radius */
+  transition: all 0.3s ease-out; /* Add transition */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.confirm-button:hover {
+  background-color: #4a4ae8; /* Change color on hover */
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+  transform: scale(1.05); /* Slightly increase size on hover */
+}
+
+.button-container {
+  width: 100%;
+  text-align: right;
+}
