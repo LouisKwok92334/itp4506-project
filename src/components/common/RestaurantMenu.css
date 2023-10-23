@@ -1,4 +1,165 @@
-/* FoodCard */
+.RestaurantMenu {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.menu-item-container {
+  width: 60%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-cart {
+  width: 35%;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menu-item-container h2,
+.menu-item-container h4 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.list-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.list-bar {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.1) transparent;
+}
+
+.list-bar ul {
+  display: flex;
+  padding: 0;
+  gap: 20px;
+  list-style-type: none;
+  white-space: nowrap; /* 確保項目不會換行 */
+}
+
+.list-bar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.list-bar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.list-bar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  border: 3px solid transparent;
+}
+
+.list-bar ul li {
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s ease;
+  padding: 0 10px;
+}
+
+.list-bar ul li:hover {
+  color: #333;
+}
+
 .FoodCard {
-    border: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.FoodCard:hover {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.food-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.add-to-cart-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+}
+
+.menu-item-cart .cart-title h3 {
+  color: #333;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item-quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-button {
+  border: none;
+  background-color: #ddd;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+  background-color: #ccc;
+}
+
+.cart-item-quantity {
+  width: 50px;
+  margin: 0 10px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.cart-total h3 {
+  color: #333;
 }
