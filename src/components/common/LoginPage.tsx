@@ -54,28 +54,16 @@ export function LoginPage() {
       }
       alert("registration successful");
     } else {
-      let usernameInput: string | undefined;
-      let passwordInput: string | undefined;
-      let credentialsInput: string | undefined;
-    
-      if (userType === 'delivery') {
-        credentialsInput = (document.querySelector('input[name="credentials"]') as HTMLInputElement).value;
-      } else {
-        usernameInput = (document.querySelector('input[name="username"]') as HTMLInputElement).value;
-        passwordInput = (document.querySelector('input[name="password"]') as HTMLInputElement).value;
-      }
+      let usernameInput = (document.querySelector('input[name="username"]') as HTMLInputElement).value;
+      let passwordInput = (document.querySelector('input[name="password"]') as HTMLInputElement).value;
 
       const userExist = user.users.find((userData) => {
-        if (userType === 'delivery') {
-          return userData.credentials === credentialsInput;
-        } else {
-          return userData.username === usernameInput && userData.password === passwordInput;
-        }
+        return userData.username === usernameInput && userData.password === passwordInput;
       });
       
       if (!userExist) {
         setMessageType('error');
-        setMessage(userType === 'delivery' ? "Invalid credentials" : "Invalid username or password");
+        setMessage("Invalid username or password");
         return;
       }
   
@@ -182,11 +170,12 @@ export function LoginPage() {
               ) : (
                 <>
                   <label htmlFor="username" className="label-blue">
-                    {userType === 'delivery' ? 'Credentials' : 'Username'}:
+                    Username:
                   </label>
-                  {userType === 'delivery' ? (
-                      <div className="password-field">
-                      <input type={isPasswordVisible ? "text" : "password"} id="credentials" name="credentials" placeholder="Enter your credentials" className="rounded-input" required
+                    <input type="text" id="username" name="username" className="rounded-input" required/>
+                    <label htmlFor="password" className="label-blue">Password:</label>
+                    <div className="password-field">
+                      <input type={isPasswordVisible ? "text" : "password"} id="password" name="password" className="rounded-input" required 
                         value={password} onChange={(e) => setPassword(e.target.value)} />
                       {isPasswordVisible ? (
                         <AiFillEye className="eye-icon" onClick={togglePasswordVisibility} />
@@ -194,21 +183,6 @@ export function LoginPage() {
                         <AiFillEyeInvisible className="eye-icon" onClick={togglePasswordVisibility} />
                       )}
                     </div>
-                  ) : (
-                    <>
-                      <input type="text" id="username" name="username" className="rounded-input" required/>
-                      <label htmlFor="password" className="label-blue">Password:</label>
-                      <div className="password-field">
-                        <input type={isPasswordVisible ? "text" : "password"} id="password" name="password" className="rounded-input" required 
-                          value={password} onChange={(e) => setPassword(e.target.value)} />
-                        {isPasswordVisible ? (
-                          <AiFillEye className="eye-icon" onClick={togglePasswordVisibility} />
-                        ) : (
-                          <AiFillEyeInvisible className="eye-icon" onClick={togglePasswordVisibility} />
-                        )}
-                      </div>
-                    </>
-                  )}
                 </>
               )}
               <div className="remember-display">

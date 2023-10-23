@@ -22,7 +22,7 @@
       "restaurantName": "Yummy Restaurant",
       "address": "123 Main St, City, State, ZIP",
       "phone": "123-456-7890",
-      "password": "123"
+      "password": "52352"
     },
     {
       "type": "restaurant",
@@ -30,25 +30,23 @@
       "restaurantName": "Delicious Diner",
       "address": "456 Market St, City, State, ZIP",
       "phone": "098-765-4321",
-      "password": "123"
+      "password": "123421"
     },
     {
       "type": "delivery",
-      "name": "Jane Doe",
+      "username": "Jane Doe",
       "email": "janedoe@example.com",
       "phone": "123-456-7890",
-      "password": "123",
-      "credentials": "pppp1234",
+      "password": "423",
       "restaurantName": "Yummy Restaurant",
       "RestaurantAccessRightsNumber": "TAT"
     },
     {
       "type": "delivery",
-      "name": "David Johnson",
+      "username": "David Johnson",
       "email": "david.johnson@example.com",
       "phone": "098-765-4321",
-      "password": "123",
-      "credentials": "oooo1234",
+      "password": "175",
       "restaurantName": "Delicious Diner",
       "RestaurantAccessRightsNumber": "TAT"
     }
