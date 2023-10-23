@@ -1,0 +1,93 @@
+.bold-text {
+    font-weight: bold;
+    margin: 20px 10px;
+  }
+  
+  .Address {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    font-size: 16px;
+  }
+  
+  .address-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+  }
+  
+  .personal-details-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .square {
+    width: 100%;
+    height: 150px;
+    margin: 20px 0;
+  }
+  
+  .button {
+    background-color: #5C5CFD;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+  
+  .address-input {
+    flex: 1;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  .address-input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px #4CAF50;
+  }
+  
+  .button-container {
+    width: 100%;
+    text-align: right;
+  }
+  
+  .confirm-button {
+    background-color: #5C5CFD;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+  }
+
+  .Address {
+    /* Other styles */
+    
+    /* Add the transition property with a longer duration */
+    transition: transform 1s ease; /* Change 0.5s to 1s to make the transition slower */
+  }
+  
+  /* Add a class for the transition state */
+  .Address.slided {
+    transform: translateX(-100%); /* Change from 100% to -100% to slide to the left */
+  }
