@@ -159,7 +159,7 @@ export function LoginPage() {
                   <label htmlFor="confirmPassword" className="label-blue">Confirm Password:</label>
                   <div className="password-field">
                     <input type={isConfirmPasswordVisible ? "text" : "password"} id="password" name="password" className="rounded-input" required 
-                        value={password} onChange={(e) => setConfirmPassword(e.target.value)} />
+                        value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                       {isConfirmPasswordVisible ? (
                         <AiFillEye className="eye-icon" onClick={toggleConfirmPasswordVisibility} />
                       ) : (
@@ -195,6 +195,8 @@ export function LoginPage() {
                     }
                 </span>
                 <span className="create-account" onClick={() => {
+                    setPassword('');
+                    setConfirmPassword('');
                     toggleRegistering(); 
                     setMessageType(null);
                 }}>
