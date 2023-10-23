@@ -1,0 +1,60 @@
+.header {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px; /* adjust as needed */
+  }
+  
+
+  .more-tab {
+    margin-left: 20px;
+  }
+  
+  .Popular-box {
+    display: flex;
+  }
+
+  .Restaurant-box {
+    margin-right: 20px;
+  }
+
+  .restaurant-image {
+    width: 300px; 
+    height: 200px; 
+    border-radius: 25px;
+    object-fit: cover;
+  }
+
+  .contect-box{
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
+  .favourite{
+    justify-content: center;
+    display: flex;
+  }
+  
+  .favourite-box {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: row; /* Change this to row */
+  }
+  
+  .favourite-contect-box {
+    margin-top: 20px;
+    margin-left: px;
+  }
+  
+  .favourite-image {
+    width: 150px; 
+    height: 150px; 
+    border-radius: 25px;
+    object-fit: cover;
+
+  }
+
+  .first-slide {
+    margin-left: 0 !important; /* Adjust as needed */
+  }
