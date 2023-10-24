@@ -1,15 +1,5 @@
 import { FoodCard } from "./FoodCard";
-import tamJaiFoodData from '../../json/tamJaiFood.json';
-import logo from '../../images/tamJai-images/logo.jpg';
-import chicken from '../../images/tamJai-images/Chicken.jpg';
-import minced_pork from '../../images/tamJai-images/Minced_Pork_Northern_Style.jpg';
-import pickled_cabbage from '../../images/tamJai-images/Pickled_Cabbage.jpg';
-import egg from '../../images/tamJai-images/Preserved_Duck_Egg.jpg';
-import rice_noodles from '../../images/tamJai-images/Rice_Noodles.jpg';
-import sliced_pork from '../../images/tamJai-images/Sliced_Pork_Belly_with_Mashed_Garlic.jpg';
-import set2 from '../../images/tamJai-images/Value_Set_for_2.jpg';
-import set3 from '../../images/tamJai-images/Value_Set_for_3.jpg';
-import set4 from '../../images/tamJai-images/Value_Set_for_4.jpg';
+
 import "./RestaurantMenu.css";
 
 export function RestaurantMenu() {
@@ -41,7 +31,7 @@ export function RestaurantMenu() {
                 <span className="food-description">Popular Snack</span>
                 <span className="food-price">HK$ 33</span>
               </div>
-              <img className="food-image" src={chicken} alt="chicken" />
+              <img className="food-image" src={""} alt="chicken" />
               <button className="add-to-cart-button">Add to Cart</button>
             </div>
           </div>
