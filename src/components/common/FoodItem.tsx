@@ -28,6 +28,7 @@ export function FoodItem({ ...props}: FoodItemProps) {
                     <span className="fs-2">{props.name}</span>
                     <span className="ms-2 text-muted">{formatCurrency(props.price)}</span>
                 </Card.Title>
+                <Card.Title className="text-muted" style={{ fontSize: '.90rem' }}>{props.description}</Card.Title>
                 <div className="mt-auto">
                     {quantity === 0 ? (
                         <Button className="w-100" onClick={() => increaseItemQuantity(props.id)}>+ Add To Cart</Button>

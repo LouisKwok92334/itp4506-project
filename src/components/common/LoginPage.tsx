@@ -108,7 +108,7 @@ export function LoginPage() {
       <div className="login-form">
         <form onSubmit={handleForm}>
           <div className="login-display">
-            <div className="title">
+            <div className="login-title">
               Yummy <span className="highlight">Restaurant</span> Group
             </div>
             <div>
