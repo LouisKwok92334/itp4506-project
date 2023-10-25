@@ -40,16 +40,16 @@
   align-items: center;
 }
 
-.confirm-button {
+.pm-confirm-button{
   background-color: #5c5cfd;
   border: none;
+  margin-top: 40px;
   color: white;
-  padding: 15px 30px;
+  padding: 16px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 20px 2px;
   cursor: pointer;
   border-radius: 30px;
   transition: all 0.3s ease-out;

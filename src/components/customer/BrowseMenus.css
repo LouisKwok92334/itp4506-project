@@ -23,7 +23,7 @@
 
 }
 .search-btn {
-  background-color: #ffc107;
+  background-color:  #5C5CFD; 
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -36,14 +36,6 @@
   padding: 20px;
   border: none;
   border-radius: 20px;
-}
-.search-btn {
-  background-color:#ffc107;
-  color:  #fff;
-  border: none;
-  border-radius: 20px;
-  width: 120px;
-  cursor: pointer;
 }
 
 .Restaurant-box {

@@ -63,9 +63,9 @@
 
 
 .tracking-button {
-  padding: 10px 20px;
-  width: 80%; 
-  margin: 20px auto; 
+  padding: 10px 40px ;
+  width:100%; 
+  margin-top: 40px;
   background-color: #5C5CFD;
   color: white;
   font-size: 16px;
