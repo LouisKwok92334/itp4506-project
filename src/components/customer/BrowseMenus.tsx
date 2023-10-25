@@ -27,24 +27,18 @@ export function BrowseMenus() {
     slidesToScroll: 1,
   };
 
-  const next = () => {
-    sliderRef.current?.slickNext();
-  };
-
-  const previous = () => {
-    sliderRef.current?.slickPrev();
-  };
-
   return (
     <div className="BrowseMenus">
       <FoodCarousel />
       <div className="restaurant-section">
+        <div className="search">
+          <input type="text" placeholder="What you want to eat?" />
+          <button className="search-btn">Search</button>
+        </div>
         <div className="header">
           <h2>
             <strong>Popular Restaurant</strong>
           </h2>
-          {/* <button onClick={previous}>Previous</button>
-          <button onClick={next}>Next</button>  */}
           <a href="#" className="more-tab">
             more
           </a>
@@ -52,6 +46,7 @@ export function BrowseMenus() {
         <Slider ref={sliderRef} {...settings}>
           {" "}
           {/* Pass the reference to the Slider component */}
+      
           <div className="Restaurant-box">
             <img className="restaurant-image" src={GoldLabel} alt="GoldLabel" />
             <div className="contect-box">
@@ -88,7 +83,6 @@ export function BrowseMenus() {
               src={Chatpoint}
               alt="Restaurant D"
             />
-
             <div className="contect-box">
               <h3>Chatpoint</h3>
               <p>3.2/5 (3000+)</p>
@@ -97,10 +91,7 @@ export function BrowseMenus() {
               <p>HK$ 10 Delivery fee</p>
             </div>
           </div>
-          <NavLink 
-            to="/restaurant-menus" 
-            className="nav-link"
-          >
+          <NavLink to="/restaurant-menus" className="nav-link">
             <div className="Restaurant-box">
               <img className="restaurant-image" src={SamGor} alt="SamGor" />
               <div className="contect-box">
@@ -122,6 +113,7 @@ export function BrowseMenus() {
               <p>HK$ 10 Delivery fee</p>
             </div>
           </div>
+
         </Slider>
       </div>
 
