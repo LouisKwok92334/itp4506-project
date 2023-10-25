@@ -29,6 +29,16 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
                 <img src={"/tamJai-images/logo.jpg"} alt="Logo" style={{ height: '70px' }} />
             </div>
         </div>
+        <div className="d-flex justify-content-between">
+            <div>
+                <Offcanvas.Title>Order</Offcanvas.Title>
+            </div>
+            <div className="text-muted" style={{ fontSize: ".75rem" }}>
+                <NavLink to="/restaurant-menus">
+                    <Button variant="outline-primary" size="sm">Edit Order</Button>
+                </NavLink>
+            </div>
+        </div>
         <hr />
         <Stack gap={3}>
           {cartItems.map((item) => (
