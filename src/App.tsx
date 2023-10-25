@@ -13,6 +13,7 @@ import { ConfirmAddress } from "./components/customer/ConfirmAddress";
 import { ConfirmPayment } from "./components/customer/ConfirmPayment";
 import { PaymentSuccessful } from "./components/customer/PaymentSuccessful";
 import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
+import { Feedback } from "./components/customer/Feedback";
 
 function AppRoutes() {
   return (
@@ -31,6 +32,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route element={<AppRoutes />}>
+          {/* customer */}
           <Route path="/profile" element={<Profile />} />
           <Route path="/browse-menus" element={<BrowseMenus />} />
           <Route path="/restaurant-menus" element={<RestaurantMenu />} />
@@ -38,7 +40,10 @@ function App() {
           <Route path="/confirm-payment" element={<ConfirmPayment />} />
           <Route path="/payment-successful" element={<PaymentSuccessful />} />
           <Route path="/online-tracking" element={<OnlineTracking />} />
+          <Route path="/feedback" element={<Feedback />} />
+          {/* delivery */}
           <Route path="/delivery-instructions" element={<DeliveryInstructions />} />
+          {/* restaurant */}
           <Route path="/manage-menus" element={<ManageMenus />} />
         </Route>
       </Routes>
