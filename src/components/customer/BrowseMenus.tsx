@@ -45,8 +45,7 @@ export function BrowseMenus() {
         </div>
         <Slider ref={sliderRef} {...settings}>
           {" "}
-          {/* Pass the reference to the Slider component */}
-      
+
           <div className="Restaurant-box">
             <img className="restaurant-image" src={GoldLabel} alt="GoldLabel" />
             <div className="contect-box">

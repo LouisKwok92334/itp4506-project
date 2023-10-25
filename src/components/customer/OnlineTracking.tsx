@@ -33,10 +33,10 @@ export function OnlineTracking() {
   return (
     <div className="OnlineTracking">
       <div className="title">
-        <h3 >
+        <h2>
           <span className="bold-text">Track Order</span>
           <span>ID: </span>
-        </h3>
+        </h2>
       </div>
       <img src={locationImage} alt="Location" className="locationImage" />
     
