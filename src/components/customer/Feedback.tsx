@@ -3,6 +3,11 @@ import './Feedback.css'
 
 export function Feedback() {
   const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+
+  const handleStarHover = (starNumber: number) => {
+    setHoverRating(starNumber);
+  };
 
   const handleStarClick = (starNumber: number) => {
     setRating(starNumber);
@@ -18,7 +23,9 @@ export function Feedback() {
           {[1, 2, 3, 4, 5].map((starNumber) => (
             <span
               key={starNumber}
-              className={`star ${starNumber <= rating ? 'active' : ''}`}
+              className={`star ${starNumber <= (hoverRating || rating) ? 'active' : ''}`}
+              onMouseEnter={() => handleStarHover(starNumber)}
+              onMouseLeave={() => setHoverRating(0)}
               onClick={() => handleStarClick(starNumber)}
             >
               &#9733;

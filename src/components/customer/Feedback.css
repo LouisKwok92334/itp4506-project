@@ -1,21 +1,21 @@
 .feedback-page {
     width: 80%;
     margin: auto;
-    border: 1px solid #b6b3b3; /* 添加邊框 */
-    background-color: #f5f5f5; /* 添加背景色 */
-    padding: 40px; /* 添加內邊距 */
+    border: 1px solid #b6b3b3;
+    background-color: #f5f5f5;
+    padding: 40px;
     border-radius: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
   }
   
   .f-title {
     text-align: left;
     color: #333;
   }
-
-  .feedback-page,
+  
   .rating-section,
   .feedback-section {
-    margin-top: 20px;
+    margin-top: 30px; /* 增大间距 */
   }
   
   .rating-title,
@@ -31,8 +31,17 @@
   
   .star {
     font-size: 2em;
-    color: #ffc107;
+    color: #ccc;
     cursor: pointer;
+    transition: color 0.2s; 
+  }
+  
+  .star:hover {
+    color: #ffc107;
+  }
+  
+  .star.active {
+    color: #ffc107;
   }
   
   .feedback-input {
@@ -52,14 +61,9 @@
     color: white;
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.2s;
   }
   
-  .star {
-    font-size: 2em;
-    color: #ccc; /* 灰色星星 */
-    cursor: pointer;
-  }
-  
-  .star.active {
-    color: #ffc107; /* 黃色星星 */
+  .submit-button:hover {
+    background-color: #e0a800;
   }
