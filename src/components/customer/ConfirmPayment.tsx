@@ -93,7 +93,7 @@ export function ConfirmPayment() {
         </div>
       </div>
       <div className="button-container">
-        <button className="confirm-button" onClick={handlePaymentConfirmation}>
+        <button className="pm-confirm-button" onClick={handlePaymentConfirmation}>
           Confirm Payment
         </button>
       </div>
