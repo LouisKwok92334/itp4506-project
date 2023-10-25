@@ -1,60 +1,100 @@
 .header {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-bottom: 20px; /* adjust as needed */
-  }
-  
-  .more-tab {
-    margin-left: 20px;
-  }
-  
-  .Popular-box {
-    display: flex;
-  }
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px; /* adjust as needed */
+}
 
-  .restaurant-image {
-    width: 300px; 
-    height: 200px; 
-    border-radius: 25px;
-    object-fit: cover;
-  }
+.more-tab {
+  margin-left: 20px;
+}
 
-  .contect-box{
-    margin-left: 10px;
-    margin-top: 20px;
-  }
+.Popular-box {
+  display: flex;
+}
+.search {
+  width: 40%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  background-color:  #fff;
+  border-radius: 20px;
+  margin-top: 20px;
 
-  .favourite{
-    justify-content: center;
-    display: flex;
-  }
-  
-  .favourite-box {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: row; 
-  }
-  
-  .favourite-contect-box {
-    margin-top: 20px;
-    margin-left: 25px;
-  }
-  
-  .favourite-image {
-    width: 150px; 
-    height: 150px; 
-    border-radius: 25px;
-    object-fit: cover;
+}
+.search-btn {
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  width: 120px;
+  cursor: pointer;
+}
+.search input {
+  width: 80%;
+  height: 100%;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+}
+.search-btn {
+  background-color:#ffc107;
+  color:  #fff;
+  border: none;
+  border-radius: 20px;
+  width: 120px;
+  cursor: pointer;
+}
 
-  }
+.Restaurant-box {
+  width: 100%;
+  padding: 1%;
+  border-radius: 8px;
+  gap: 1.5rem;
+  overflow-x: hidden;
+}
 
-  .first-slide {
-    margin-left: 0 !important; 
-  }
+.restaurant-image {
+  width: 300px;
+  height: 200px;
+  border-radius: 25px;
+  object-fit: cover;
+}
 
-  .nav-link a {
-    color: #333;
-    text-decoration: none;
-  }
+.contect-box {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.favourite {
+  justify-content: center;
+  display: flex;
+}
+
+.favourite-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.favourite-contect-box {
+  margin-top: 20px;
+  margin-left: 25px;
+}
+
+.favourite-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.first-slide {
+  margin-left: 0 !important;
+}
+
+.nav-link a {
+  color: #333;
+  text-decoration: none;
+}

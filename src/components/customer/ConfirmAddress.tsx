@@ -11,9 +11,9 @@ export function ConfirmAddress() {
     setSlided(true);
     setTimeout(() => {
       navigate("/confirm-payment");
+      window.scrollTo(0, 0);
     }, 500); 
   };
-
   return (
     <div className={`Address ${slided ? "slided" : ""}`}>
       <div className="ConfirmAddress">

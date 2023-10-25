@@ -65,8 +65,8 @@ export function OnlineTracking() {
           ))}
         </div>
         <div className="text-box">
-        <h3 className="bold-text">Delivery Staff Information</h3>
           <div className="tracking-square">
+               <h3 className="bold-text">Delivery Staff Information</h3>
             <div className="tracking-input">
               <div className="info-input">
                 <label htmlFor="nameField">Name: </label>
