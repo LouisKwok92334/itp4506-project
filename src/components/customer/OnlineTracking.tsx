@@ -32,65 +32,66 @@ export function OnlineTracking() {
 
   return (
     <div className="OnlineTracking">
-      {/*...*/}
-      <div className ="title">
-      <h3 style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className="title">
+        <h3 >
           <span className="bold-text">Track Order</span>
           <span>ID: </span>
         </h3>
       </div>
-        <img src={locationImage} alt="Location" className="locationImage" />
-        <div className="box">
-          <div className="status-box">
-            {orderStatuses.map((status, index) => (
-              <div className="status" key={status.name}>
-                <img
-                  src={
-                    status.isCompleted
-                      ? DoneAllAltRoundIcon
-                      : NotAllAltRoundIcon
-                  }
-                  alt={status.isCompleted ? "Done icon" : "Not Done icon"}
-                  style={{ width: "110px", height: "70px" }}
+      <img src={locationImage} alt="Location" className="locationImage" />
+    
+      <div className="box">
+    
+        <div className="status-box">
+          {orderStatuses.map((status, index) => (
+            <div className="status" key={status.name}>
+              <img
+                src={
+                  status.isCompleted ? DoneAllAltRoundIcon : NotAllAltRoundIcon
+                }
+                alt={status.isCompleted ? "Done icon" : "Not Done icon"}
+                style={{ width: "110px", height: "70px" }}
+              />
+              <div className="status-content">
+                <span>{status.name}</span>
+                <span style={{ color: "rgba(0, 0, 0, 0.3)" }}>
+                  {status.isCompleted && status.time
+                    ? status.time.toLocaleString()
+                    : "-"}
+                </span>
+              </div>
+            </div>
+          
+          ))}
+        </div>
+        <div className="text-box">
+        <h3 className="bold-text">Delivery Staff Information</h3>
+          <div className="tracking-square">
+            <div className="tracking-input">
+              <div className="info-input">
+                <label htmlFor="nameField">Name: </label>
+                <input
+                  type="info-text"
+                  id="nameField"
+                  placeholder="Name"
+                  value={"Jane Doe"}
+                  style={{ borderRadius: "25px" }}
                 />
-                <div className="status-content">
-                  <span>{status.name}</span>
-                  <span style={{ color: "rgba(0, 0, 0, 0.3)" }}>
-                    {status.isCompleted && status.time
-                      ? status.time.toLocaleString()
-                      : "-"}
-                  </span>
-                </div>
               </div>
-            ))}
-          </div>
-          <div className="text-box">
-            <span className="bold-text">Delivery Staff Information</span>
-            <div className="square-container">
-              <div className="square">
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    marginBottom: "20px",
-                  }}
-                >
-                  <label htmlFor="nameField" style={{ marginRight: "10px" }}>
-                    Name:{" "}
-                  </label>
-                  <input type="text" id="nameField" placeholder="Name" value={"Jane Doe"}/>
-                </div>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                  <label htmlFor="phoneField" style={{ marginRight: "10px" }}>
-                    Phone:{" "}
-                  </label>
-                  <input type="text" id="phoneField" placeholder="Phone" value={"123-456-7890"}/>
-                </div>
+              <div className="info-input">
+                <label htmlFor="phoneField">Phone: </label>
+                <input
+                  type="info-text"
+                  id="phoneField"
+                  placeholder="Phone"
+                  value={"123-456-7890"}
+                />
               </div>
-              <button className="button">View Order</button>
             </div>
           </div>
+          <button className="tracking-button">View Order</button>
         </div>
+      </div>
     </div>
   );
 }

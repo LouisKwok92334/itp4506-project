@@ -20,16 +20,18 @@ export function ConfirmAddress() {
         <h2 className="bold-text">Delivery address</h2>
         <img src={locationImage} alt="Location" className="stretch-image" />
         <div className="address-container">
-          <input
-            className="address-input"
-            type="text"
-            placeholder="Enter your address"
-          />
-          <button className="button">Edit</button>
-        </div>
+  <div className="input-button-wrapper">
+    <input
+      className="address-input"
+      type="text"
+      placeholder="Enter your address"
+    />
+    <button className="loc-edit-button">Edit</button>
+  </div>
+</div>
         <div className="personal-details-container">
           <h2 className="bold-text">Personal details</h2>
-          <button className="button">Edit</button>
+          <button className="edit-button">Edit</button>
         </div>
         <div className="square-details">
           <p className="detail-text">Bosco Chuen</p>
