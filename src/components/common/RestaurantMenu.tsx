@@ -1,6 +1,8 @@
-import { FoodCard } from "./FoodCard";
 
+import { Col, Row } from "react-bootstrap";
+import FoodItems from "../../json/tamJaiFood.json";
 import "./RestaurantMenu.css";
+import { FoodItem } from "./FoodItem";
 
 export function RestaurantMenu() {
     return (
@@ -24,39 +26,17 @@ export function RestaurantMenu() {
           </div>
   
           <h4>Popular</h4>
-          <div className="food-card-container">
-            <div className="FoodCard">
-              <div className="FoodCard-Title">
-                <span className="food-name">Chicken</span>
-                <span className="food-description">Popular Snack</span>
-                <span className="food-price">HK$ 33</span>
-              </div>
-              <img className="food-image" src={""} alt="chicken" />
-              <button className="add-to-cart-button">Add to Cart</button>
-            </div>
-          </div>
+            <Row md={2} xs={1} lg={3} className="g-3">
+                {FoodItems.map((foodItem) => (
+                    <Col key={foodItem.id}>{
+                        <FoodItem {...foodItem}/>
+                    }</Col>
+                ))}
+            </Row>
           <h4>Promotional Item</h4>
           <h4>Sets</h4>
           <h4>Side Dishes</h4>
           <h4>Drinks</h4>
-        </div>
-  
-       <div className="menu-item-cart">
-        <div className="cart-title">
-            <h3>Shopping Cart</h3>
-        </div>
-        <div className="cart-item">
-            <span className="cart-item-name">Chicken</span>
-            <div className="cart-item-quantity-control">
-            <button className="quantity-button">-</button>
-            <input type="number" className="cart-item-quantity" value={1} />
-            <button className="quantity-button">+</button>
-            </div>
-            <span className="cart-item-price">HK$ 33</span>
-        </div>
-        <div className="cart-total">
-            <h3>Total: HK$ 33</h3>
-        </div>
         </div>
       </div>
     );

@@ -12,15 +12,16 @@ import { RestaurantMenu } from "./components/common/RestaurantMenu";
 import { ConfirmAddress } from "./components/customer/ConfirmAddress";
 import { ConfirmPayment } from "./components/customer/ConfirmPayment";
 import { PaymentSuccessful } from "./components/customer/PaymentSuccessful";
+import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
 
 function AppRoutes() {
   return (
-    <>
+    <ShoppingCartProvider>
       <Header />
       <div className="AppRoutes">
         <Outlet />
       </div>
-    </>
+    </ShoppingCartProvider>
   );
 }
 
