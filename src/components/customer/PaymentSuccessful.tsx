@@ -14,16 +14,16 @@ export function PaymentSuccessful() {
   return (
     <div className="PaymentSuccessful">
       <div className="order-details-container">
-      <div className="header">
+      <div className="SF-header">
           <h2 className="bold-text">Payment Successful</h2>
           <span className="orderId">ID: XXXXXXX</span>
         </div>
-        <div className="square">
+        <div className="SF-square">
           <div className="content-container">
             <img
               src={ginRestImage}
               alt="Restaurant"
-              className="img"
+              className="SF-restaurant-img"
             />
             <div className="text-container">
               <h3 className="restaurant-name">Restaurant Name</h3>
