@@ -18,16 +18,18 @@ export function ConfirmPayment() {
 
   return (
     <div className={`ConfirmPayment ${fade}`}>
-      <div>
-        <h2 className="bold-text">Confirm Order</h2>
+      <div className="payment-header">
+        <h2 className="bold-text">Confirm Order</h2>  
+        <button className="edit-button">Edit</button>
+
       </div>
       <div className="order-details-container">
-        <div className="square">
+        <div className="square-order">
           <div className="content-container">
             <img
               src={ginRestImage}
               alt="Restaurant"
-              className="img"
+              className="restaurant-img"
             />
             <div className="text-container">
               <h3 className="restaurant-name">Restaurant Name</h3>
@@ -49,7 +51,7 @@ export function ConfirmPayment() {
       </div>
 
       <div className="payment-details-container">
-        <div className="square">
+        <div className="payment-square">
           <div className="payment-details-container">
             <div className="input-grid">
               <div className="input-field">

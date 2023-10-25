@@ -31,13 +31,12 @@ export function ConfirmAddress() {
           <h2 className="bold-text">Personal details</h2>
           <button className="button">Edit</button>
         </div>
-        <div className="square">
-        <div>
-        </div>
+        <div className="square-details">
           <p className="detail-text">Bosco Chuen</p>
           <p className="detail-text">bosco.chuen@gmail.com</p>
           <p className="detail-text">+852 53300440</p>
         </div>
+       
         <div className="box"></div>
         <div className="button-container">
           <button className="confirm-button" onClick={handleButtonClick}>
