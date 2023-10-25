@@ -53,6 +53,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
               }, 0)
             )}
           </div>
+          <hr />
           <NavLink to="/confirm-address">
             <Button variant="primary" className="w-100">
               Checkout
