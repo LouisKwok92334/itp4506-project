@@ -11,7 +11,7 @@ export function ConfirmAddress() {
     setSlided(true);
     setTimeout(() => {
       navigate("/confirm-payment");
-    }, 500); // Wait for the same duration as the CSS transition
+    }, 500); 
   };
 
   return (

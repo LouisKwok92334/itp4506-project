@@ -33,11 +33,12 @@ export function OnlineTracking() {
   return (
     <div className="OnlineTracking">
       {/*...*/}
-      <div>
-        <h3 style={{ display: "flex", justifyContent: "space-between" }}>
+      <div className ="title">
+      <h3 style={{ display: "flex", justifyContent: "space-between" }}>
           <span className="bold-text">Track Order</span>
           <span>ID: </span>
         </h3>
+      </div>
         <img src={locationImage} alt="Location" className="locationImage" />
         <div className="box">
           <div className="status-box">
@@ -90,7 +91,6 @@ export function OnlineTracking() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }
