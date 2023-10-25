@@ -75,7 +75,6 @@ export function OnlineTracking() {
                   id="nameField"
                   placeholder="Name"
                   value={"Jane Doe"}
-                  style={{ borderRadius: "25px" }}
                 />
               </div>
               <div className="info-input">
