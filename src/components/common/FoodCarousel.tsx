@@ -64,7 +64,8 @@ export function FoodCarousel(args: Record<string, unknown>) {
             width: '100%', 
             height: '400px', 
             objectFit: 'cover', 
-            borderRadius: '25px'
+            borderRadius: '25px',
+            margin: '10px',
           }} 
         />
       </CarouselItem>

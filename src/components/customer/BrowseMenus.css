@@ -1,8 +1,15 @@
+.BrowseMenus {
+  font-size: 14px;
+}
+
+h3{
+  font-size: 25px;
+  font-weight: bold;
+}
 .header {
   display: flex;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px; /* adjust as needed */
+  margin: 20px;
 }
 
 .more-tab {
@@ -12,18 +19,18 @@
 .Popular-box {
   display: flex;
 }
+
 .search {
   width: 40%;
   height: 50px;
   display: flex;
   justify-content: space-around;
-  background-color:  #fff;
+  background-color: #fff;
   border-radius: 20px;
-  margin-top: 20px;
-
+  margin: 20px;
 }
 .search-btn {
-  background-color:  #5C5CFD; 
+  background-color: #5c5cfd;
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -38,24 +45,49 @@
   border-radius: 20px;
 }
 
+.contect-box {
+  margin-top: 20px;
+}
 .Restaurant-box {
-  width: 100%;
-  padding: 1%;
-  border-radius: 8px;
-  gap: 1.5rem;
-  overflow-x: hidden;
+  background-color: #ffffff;
+  width: 25%;
+  border-radius: 20px;
+  padding: 3px;
+  margin: 20px;
+}
+.box-item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.restaurant-section {
+  display: flex;
+  margin-bottom: 3%;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  background-color: #dcdcdc;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px;
+}
+
+.favourite-section {
+  display: flex;
+  margin-bottom: 3%;
+  display: flex;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  background-color: #dcdcdc;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px;
 }
 
 .restaurant-image {
-  width: 300px;
-  height: 200px;
+  width: 250px;
+  height: 150px;
   border-radius: 25px;
-  object-fit: cover;
-}
-
-.contect-box {
-  margin-left: 10px;
-  margin-top: 20px;
 }
 
 .favourite {
@@ -64,20 +96,21 @@
 }
 
 .favourite-box {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: center;
+  margin: 20px;
+  background-color: #ffffff;
+  border-radius: 20px;
 }
 
 .favourite-contect-box {
   margin-top: 20px;
-  margin-left: 25px;
+  text-align: center;
 }
 
 .favourite-image {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 110px;
   border-radius: 25px;
   object-fit: cover;
 }
