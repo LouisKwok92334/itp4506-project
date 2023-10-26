@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useState, useEffect } from 'react';
 import Slider, { CustomArrowProps } from "react-slick"; // Import Slider type here
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -24,13 +25,27 @@ import Cantonese from "../../images/Cantonese.jpeg";
 
 import { NavLink } from "react-router-dom";
 export function BrowseMenus() {
-  const sliderRef = useRef<Slider | null>(null); // Use Slider type here
+  const sliderRef = useRef<Slider | null>(null);
   var settings = {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
   };
+
+  const [time, setTime] = useState(180); 
+
+  let timer: number | NodeJS.Timer | undefined; 
+  useEffect(() => {
+    if (time > 0) {
+      timer = setInterval(() => setTime(time - 1), 1000);
+    }
+    return () => { 
+      if (timer) {
+        clearInterval(timer); 
+      }
+    };
+  }, [time]);
 
   return (
     <div className="BrowseMenus">
@@ -39,6 +54,34 @@ export function BrowseMenus() {
         <input type="text" placeholder="What you want to eat?" />
         <button className="search-btn">Search</button>
       </div>
+
+      <div className="header">
+        <h2>
+          <strong>Get 25% off</strong>
+        </h2>
+      </div>
+
+      <div className="discount-section">
+       
+      <div className="timer">
+        <p>Time is running out! {Math.floor(time / 60)}:{('0' + time % 60).slice(-2)}</p> 
+      </div>
+  <div className="dd-Restaurant-box">
+    <div className="box-item">
+      <img className="restaurant-image" src={GoldLabel} alt="GoldLabel" />
+      <div className="contect-box">
+        <h3>Gold Label</h3>
+        <p>4.4/5 (3000+)</p>
+        <p>$$$</p>
+        <p>Cha Chaan Teng</p>
+        <p>HK$ 5 Delivery fee</p>
+      </div>
+     
+    </div>
+  </div>
+        
+      </div>
+
       <div className="header">
         <h2>
           <strong>Popular Restaurant</strong>

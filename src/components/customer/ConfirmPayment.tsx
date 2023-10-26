@@ -33,7 +33,10 @@ const subtotal = products.reduce((acc, product) => {
   };
 
   return (
+
+    
     <div className="CM-container">
+
       <div className="CM-shopping-cart">
         <h2>Shopping Cart</h2>
         {products.map((product, index) => (
@@ -93,7 +96,10 @@ const subtotal = products.reduce((acc, product) => {
             />
           </div>
           <div className="CP-button-container">
-          <button type="submit" className="CM-button">CHECKOUT</button>
+          <button className="CM-back-button" onClick={() => navigate("/confirm-address")}>
+        Back
+      </button>
+          <button type="submit" className="CM-button">Checkout</button>
           </div>
       
         </form>

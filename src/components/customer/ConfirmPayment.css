@@ -10,6 +10,9 @@
   padding: 40px;
 }
 
+
+
+
 .CM-shopping-cart, .CM-payment {
   display: flex;
   flex-direction: column;
@@ -84,12 +87,28 @@
   cursor: pointer;
   font-size: 19px;
   transition: background-color 0.3s ease;
+  margin-left: 10px;
 }
 
 .CM-button:hover {
   background-color: #0056b3;
 }
 
+.CM-back-button{
+  padding: 18px 28px;
+  border: none;
+  background-color: #ff3f3f;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 19px;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+.CM-back-button:hover{
+  background-color: #cf322a;
+
+}
 .CP-button-container {
   display: flex;
   justify-content: flex-end;
