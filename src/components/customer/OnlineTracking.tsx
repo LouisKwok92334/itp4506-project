@@ -33,15 +33,14 @@ export function OnlineTracking() {
   return (
     <div className="OnlineTracking">
       <div className="title">
-        <h2>
-          <span className="bold-text">Track Order</span>
-          <span>ID: </span>
-        </h2>
+        <h1>
+          <span>Track Order</span>
+        </h1>
+        <span>ID:xxxxxxx</span>
       </div>
       <img src={locationImage} alt="Location" className="locationImage" />
-    
+
       <div className="box">
-    
         <div className="status-box">
           {orderStatuses.map((status, index) => (
             <div className="status" key={status.name}>
@@ -61,30 +60,31 @@ export function OnlineTracking() {
                 </span>
               </div>
             </div>
-          
           ))}
         </div>
         <div className="text-box">
           <div className="tracking-square">
-               <h3 className="bold-text">Delivery Staff Information</h3>
-            <div className="tracking-input">
-              <div className="info-input">
-                <label htmlFor="nameField">Name: </label>
-                <input
-                  type="info-text"
-                  id="nameField"
-                  placeholder="Name"
-                  value={"Jane Doe"}
-                />
-              </div>
-              <div className="info-input">
-                <label htmlFor="phoneField">Phone: </label>
-                <input
-                  type="info-text"
-                  id="phoneField"
-                  placeholder="Phone"
-                  value={"123-456-7890"}
-                />
+            <div className = "OT-Delivery-box">
+              <h3 className="OT-bold-text">Delivery Staff Information</h3>
+              <div className="tracking-input">
+                <div className="info-input">
+                  <label htmlFor="nameField">Name: </label>
+                  <input
+                    type="info-text"
+                    id="nameField"
+                    placeholder="Name"
+                    value={"Jane Doe"}
+                  />
+                </div>
+                <div className="info-input">
+                  <label htmlFor="phoneField">Phone: </label>
+                  <input
+                    type="info-text"
+                    id="phoneField"
+                    placeholder="Phone"
+                    value={"123-456-7890"}
+                  />
+                </div>
               </div>
             </div>
           </div>
