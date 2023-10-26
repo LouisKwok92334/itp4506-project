@@ -23,10 +23,11 @@ export function Feedback() {
           alt="Delivery Completed"
           className="welcome-image"
         />
-        <h2>Your order has been delivered!</h2>
-        <p>Thank you for your patronage! We hope you enjoy your meal.</p>
+        <div className="FB-text">  <h2>Your order has been delivered!</h2>
+        <p>Thank you for your patronage! We hope you enjoy your meal.</p></div>
+       
       </div>
-
+      <hr className="separator-line" />
       <h1 className="f-title ">Customer Feedback</h1>
 
       <div className="rating-section">
