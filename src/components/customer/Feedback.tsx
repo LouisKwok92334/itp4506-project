@@ -51,7 +51,10 @@ export function Feedback() {
       <div className="feedback-section">
         <p className="feedback-title">Please leave your feedback:</p>
         <textarea className="feedback-input"></textarea>
-        <button className="submit-button">Submit</button>
+        <div className="sb">
+                  <button className="submit-button">Submit</button>
+        </div>
+
       </div>
     </div>
   );
