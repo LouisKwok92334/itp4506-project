@@ -50,8 +50,9 @@
 }
 
 .confirm-img {
-  width: 100px; 
-  margin-bottom: 20px; 
+  width: 100px;
+  margin-bottom: 20px;
+  animation: zoomIn 0.5s ease-in-out;
 }
 
 .Track-button {
@@ -81,4 +82,28 @@
   height: auto;
   border-radius: 25px;
   margin-right: 40px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.PaymentSuccessful {
+  width: 80%;
+  margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
