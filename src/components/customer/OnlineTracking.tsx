@@ -5,6 +5,7 @@ import locationImage from '../../images/Location.png';
 import DoneAllAltRoundIcon from '../../svg/done-all-alt-round.svg';
 import NotAllAltRoundIcon from '../../svg/Not_done.svg';
 
+
 export function OnlineTracking() {
   const [orderStatuses, setOrderStatuses] = useState([
     { name: 'Restaurant received order', isCompleted: true, time: new Date() },
@@ -12,9 +13,16 @@ export function OnlineTracking() {
     { name: 'food is picked up', isCompleted: false, time: null },
     { name: 'food has been delivered', isCompleted: false, time: null },
   ]);
-
+  <div>
+  <h2>Your Order</h2>
+  {/* 添加其他的内容... */}
+</div>
   const navigate = useNavigate();
 
+  const handleViewOrderClick = () => {
+    navigate("/payment-successful");
+  };
+  
   useEffect(() => {
     const timer = setInterval(() => {
       setOrderStatuses((prevStatuses) =>
@@ -101,7 +109,7 @@ export function OnlineTracking() {
               </div>
             </div>
           </div>
-          <button className="tracking-button">View Order</button>
+          <button className="tracking-button" onClick={handleViewOrderClick}>View Order</button>
         </div>
       </div>
     </div>
