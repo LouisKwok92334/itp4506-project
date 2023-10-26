@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import './Feedback.css'
+import React, { useState } from "react";
+import "./Feedback.css";
+
+import Delivery from "../../images/Delivery.png";
 
 export function Feedback() {
   const [rating, setRating] = useState(0);
@@ -15,6 +17,16 @@ export function Feedback() {
 
   return (
     <div className="feedback-page">
+      <div className="welcome-section">
+        <img
+          src={Delivery}
+          alt="Delivery Completed"
+          className="welcome-image"
+        />
+        <h2>Your order has been delivered!</h2>
+        <p>Thank you for your patronage! We hope you enjoy your meal.</p>
+      </div>
+
       <h1 className="f-title ">Customer Feedback</h1>
 
       <div className="rating-section">
@@ -23,7 +35,9 @@ export function Feedback() {
           {[1, 2, 3, 4, 5].map((starNumber) => (
             <span
               key={starNumber}
-              className={`star ${starNumber <= (hoverRating || rating) ? 'active' : ''}`}
+              className={`star ${
+                starNumber <= (hoverRating || rating) ? "active" : ""
+              }`}
               onMouseEnter={() => handleStarHover(starNumber)}
               onMouseLeave={() => setHoverRating(0)}
               onClick={() => handleStarClick(starNumber)}

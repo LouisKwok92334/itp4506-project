@@ -1,104 +1,98 @@
 import React, { useState } from "react";
 import "./ConfirmPayment.css";
 import { useNavigate } from "react-router-dom";
-import ginRestImage from "../../images/Gin-rest.png";
+import sushiImage from "../../images/sushi.png";
 
 export function ConfirmPayment() {
   const navigate = useNavigate();
-  const [fade, setFade] = useState("fade-in");
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
 
-  const handlePaymentConfirmation = () => {
-    setFade("fade-out");
+  const products = [
+    {
+      image: sushiImage,
+      title: "RIB-EYE AND SALMON STEAK",
+      description: "Lorem ipsum dolor sit, amet consectetur...",
+      price: "$50.40"
+    },
+    {
+      image: sushiImage,
+      title: "RIB-EYE AND SALMON STEAK",
+      description: "Lorem ipsum dolor sit, amet consectetur...",
+      price: "$50.40"
+    }
+  ];
 
-    setTimeout(() => navigate("/payment-successful"), 300);
+  const handlePaymentConfirmation = () => {
+    navigate("/payment-successful");
   };
 
   return (
-    <div className={`ConfirmPayment ${fade}`}>
-    <div className="payment-header">
-      <h2 className="bold-text">Confirm Order</h2>  
-      <button className="edit-button">Edit</button>
-
-    </div>
-    <div className="order-details-container">
-      <div className="square-order">
-        <div className="content-container">
-          <img
-            src={ginRestImage}
-            alt="Restaurant"
-            className="restaurant-img"
-          />
-          <div className="text-container">
-            <h3 className="restaurant-name">Restaurant Name</h3>
-            <ul className="food-list">
-              <li>Food Item 1</li>
-              <li>Food Item 2</li>
-              <li>Food Item 3</li>
-            </ul>
-            <hr className="divider" />
-            <p className="total-cost">Total cost: $XX.XX</p>
-            <p className="delivery-fee">Delivery fee: $X.XX</p>
+    <div className="CM-container">
+      <div className="CM-shopping-cart">
+        <h2>SHOPPING CART</h2>
+        {products.map((product, index) => (
+          <div className="CM-product" key={index}>
+            <img src={product.image} alt="product-image" />
+            <div>
+              <h3>{product.title}</h3>
+              <p>{product.description}</p>
+              <div className="product-controls">
+                <span>{product.price}</span>
+                <div className="quantity-controls">
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        ))}
+        <div className="subtotal">SUBTOTAL: $60.60</div>
       </div>
-    </div>
-    <div className="payment-header">
-      <h2 className="bold-text">Confirm Payment</h2>
-      <button className="edit-button">Edit</button>
-    </div>
 
-    <div className="payment-details-container">
-      <div className="payment-square">
-        <div className="payment-details-container">
-          <div className="input-grid">
-            <div className="input-field">
-              <label className="input-label">
-                Card Number
-                <input
-                  type="text"
-                  value={cardNumber}
-                  onChange={(e) => setCardNumber(e.target.value)}
-                  className="input"
-                />
-              </label>
-            </div>
-            <div className="input-field">
-              <label className="input-label">
-                CVV
-                <input
-                  type="text"
-                  value={cvv}
-                  onChange={(e) => setCvv(e.target.value)}
-                  maxLength={3}
-                  className="input"
-                />
-              </label>
-            </div>
-          </div>
-          <div className="input-field">
-            <label className="input-label">
-              Expiry Date
+      <div className="CM-payment">
+        <h2>Payment</h2>
+        <form onSubmit={handlePaymentConfirmation}>
+          <div className="payment-options">
+            <label>
+              <input type="radio" name="payment" value="cod" />  Cash On Delivery
+              (COD)
+            </label>
+            <label>
               <input
-                type="text"
-                value={expiryDate}
-                onChange={(e) => setExpiryDate(e.target.value)}
-                className="input"
-              />
+                type="radio"
+                name="payment"
+                value="online"
+                defaultChecked
+              />    Online Payment
             </label>
           </div>
-        </div>
+          <div className="card-details">
+            <input type="text" placeholder="Cardholder Name" />
+            <input
+              type="text"
+              placeholder="Card Number"
+              value={cardNumber}
+              onChange={(e) => setCardNumber(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Exp Date"
+              value={expiryDate}
+              onChange={(e) => setExpiryDate(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="CVV"
+              value={cvv}
+              onChange={(e) => setCvv(e.target.value)}
+            />
+          </div>
+          <div className="CP-button-container">
+          <button type="submit" className="CM-button">CHECKOUT</button>
+          </div>
+      
+        </form>
       </div>
     </div>
-    <div className="button-container">
-      <button className="pm-confirm-button" onClick={handlePaymentConfirmation}>
-        Confirm Payment
-      </button>
-    </div>
-  </div>
-
-
   );
 }

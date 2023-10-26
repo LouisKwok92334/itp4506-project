@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
-import "./OnlineTracking.css";
-import locationImage from "../../images/Location.png";
-import DoneAllAltRoundIcon from "../../svg/done-all-alt-round.svg";
-import NotAllAltRoundIcon from "../../svg/Not_done.svg";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './OnlineTracking.css';
+import locationImage from '../../images/Location.png';
+import DoneAllAltRoundIcon from '../../svg/done-all-alt-round.svg';
+import NotAllAltRoundIcon from '../../svg/Not_done.svg';
 
 export function OnlineTracking() {
   const [orderStatuses, setOrderStatuses] = useState([
-    { name: "Restaurant received order", isCompleted: true, time: new Date() },
-    { name: "food is cooked", isCompleted: false, time: null },
-    { name: "food is picked up", isCompleted: false, time: null },
-    { name: "food has been delivered", isCompleted: false, time: null },
+    { name: 'Restaurant received order', isCompleted: true, time: new Date() },
+    { name: 'food is cooked', isCompleted: false, time: null },
+    { name: 'food is picked up', isCompleted: false, time: null },
+    { name: 'food has been delivered', isCompleted: false, time: null },
   ]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -25,16 +28,26 @@ export function OnlineTracking() {
           return status;
         })
       );
-    }, 10 * 1000); // 10 seconds // 15 * 60 * 1000); // 15 minutes
+    }, 10 * 1000); // 10 seconds
+
+    const deliveryStatus = orderStatuses.find(
+      (status) => status.name === 'food has been delivered'
+    );
+    if (deliveryStatus && deliveryStatus.isCompleted) {
+      setTimeout(() => {
+        navigate('/feedback');
+      }, 1000); // Redirect after 1 second
+    }
 
     return () => clearInterval(timer); // cleanup on unmount
-  }, []);
+  }, [orderStatuses, navigate]);
 
   return (
     <div className="OnlineTracking">
       <div className="title">
         <h1>
           <span>Track Order</span>
+
         </h1>
         <span>ID:xxxxxxx</span>
       </div>

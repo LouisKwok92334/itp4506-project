@@ -1,51 +1,97 @@
+body {
+  font-family: 'Arial', sans-serif;
+}
+
 .PaymentSuccessful {
   width: 80%;
-  margin: 0 auto;
+  margin: 50px auto;
+  animation: fadeIn 1s ease-in-out;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  padding: 25px;
 }
+
 .SF-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 15px;
+}
+
+.bold-text {
+  color: #333;
+  font-size: 24px;
+  margin: 0;
 }
 
 .orderId {
-  justify-content: space-between;
-  right: 0;
-  font-size: 1.2em;
+  color: #888;
   font-size: 15px;
 }
 
-.order-details-container {
-  width: 100%;
-}
-
 .SF-square {
-  width: 100%;
-  padding: 20px;
-  background-color: #e4e4e4;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
   display: flex;
-padding: 3%;
-  margin-right: 30px;
+  background-color: #f7f7f7;
+  margin-top: 25px;
+  border-radius: 10px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
 }
 
 .SF-square:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-.content-container{
-  margin-left: 6%; 
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
 }
 
-.confirm-container {
+.SF-content-container {
+  display: flex;
+  align-items: center;
   width: 100%;
+}
+
+.SF-restaurant-img {
+  width: 270px;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.text-container {
+  flex-grow: 1;
+}
+
+.restaurant-name {
+  font-size: 20px;
+  margin-top: 0;
+  color: #444;
+}
+
+.food-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.food-list li {
+  color: #777;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.total-cost, .delivery-fee {
+  color: #555;
+}
+
+.SF-confirm-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .confirm-img {
@@ -55,54 +101,38 @@ padding: 3%;
 }
 
 .Track-button {
-  background-color: #5c5cfd;
-  border: none;
-  color: white;
-  padding: 15px 30px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  padding: 12px 24px;
   font-size: 16px;
-  margin: 20px 2px;
+  border: none;
+  background-color: #5c5cfd;
+  color: white;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 20px;
   transition: all 0.3s ease-out;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   width: 60%;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .Track-button:hover {
   background-color: #4a4ae8;
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-}
-.SF-restaurant-img{
-  width: 35%;
-  height: auto;
-  border-radius: 25px;
-  margin-right: 40px;
+  transform: translateY(-3px);
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
+      opacity: 0;
   }
   to {
-    opacity: 1;
+      opacity: 1;
   }
-}
-
-.PaymentSuccessful {
-  width: 80%;
-  margin: 0 auto;
-  animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes zoomIn {
   from {
-    transform: scale(0);
+      transform: scale(0);
   }
   to {
-    transform: scale(1);
+      transform: scale(1);
   }
 }

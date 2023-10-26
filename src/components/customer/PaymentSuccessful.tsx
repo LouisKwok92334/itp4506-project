@@ -19,7 +19,7 @@ export function PaymentSuccessful() {
           <span className="orderId">ID: XXXXXXX</span>
         </div>
         <div className="SF-square">
-          <div className="content-container">
+          <div className="SF-content-container">
             <img
               src={ginRestImage}
               alt="Restaurant"
@@ -38,7 +38,7 @@ export function PaymentSuccessful() {
             </div>
           </div>
         </div>
-        <div className="confirm-container">
+        <div className="SF-confirm-container">
           <img
             src={confirm}
             alt="Confirm"

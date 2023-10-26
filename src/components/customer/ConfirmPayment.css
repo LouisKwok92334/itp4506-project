@@ -1,156 +1,98 @@
-
-.ConfirmPayment {
-  width: 80%;
-  margin: 0 auto;
-  text-align: left;
+.CM-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1500px;
+  margin: 40px auto;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px;
 }
 
-.payment-header {
+.CM-shopping-cart, .CM-payment {
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  padding-bottom: 50px;
+}
+.CM-shopping-cart h2, .CM-payment h2 {
+  margin-bottom: 50px;  
+}
+
+.CM-product {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 35px;
   align-items: center;
-  width: 100%;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 35px;
 }
 
-.order-details-container,
-.payment-details-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.square-order {
-  width: 100%;
-  height: 300px;
-  background-color: #D9D9D9;
-  border-radius: 25px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+.CM-product img {
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
 }
 
-.square-order:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.button-container {
+.product-controls, .quantity-controls {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 }
 
-.pm-confirm-button{
-  background-color: #5c5cfd;
-  border: none;
-  margin-top: 40px;
-  color: white;
-  padding: 16px 20px;
+.quantity-controls input {
+  width: 60px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.3s ease-out;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border: 2px solid #dee2e6;
+  font-size: 18px;
 }
 
-.confirm-button:hover {
-  background-color: #4a4ae8;
-  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-}
-
-.button-container {
-  width: 100%;
+.subtotal {
+  font-size: 24px;
+  font-weight: bold;
   text-align: right;
 }
 
-.ConfirmPayment,
-.PaymentSuccessful {
-  transition: opacity 0.3s ease-out;
-}
-
-.fade-out {
-  opacity: 0;
-}
-
-.fade-in {
-  opacity: 1;
-}
 
 
-.input {
-  padding: 10px;
-  border: none;
-  border-radius: 10px;
-  font-size: 16px;
+.card-details input {
   width: 100%;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.3s ease;
-}
-
-.input:focus {
-  box-shadow: 0 0 15px 4px rgba(66, 133, 244, 0.5);
-  outline: none;
-}
-
-.content-container {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.restaurant-img{
-  margin: auto;
-  width: 30%;
-  height: 100%;
-  margin-left: 30px;
-  border-radius: 25px;
-}
-
-.text-container {
-  width: 60%;
-}
-
-.payment-square{
-  width: 100%;
-  height: 230px;
-  background-color: #D9D9D9;
-  border-radius: 25px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-
-}
-.payment-square:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-.payment-details-container {
-  border-radius: 4px;
-}
-
-.input-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px;
-}
-
-.input-field {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin-left: 120px;
-}
-
-.input-label {
   margin-bottom: 20px;
-  font-weight: bold;
-  color: #444;
+  padding: 18px;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 18px;
 }
 
+.card-details input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 10px rgba(0,123,255, 0.5);
+}
+
+.CM-button {
+  padding: 18px 28px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 19px;
+  transition: background-color 0.3s ease;
+}
+
+.CM-button:hover {
+  background-color: #0056b3;
+}
+
+.CP-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.payment-options label {
+  display: block;
+  margin-bottom: 20px;  
+}

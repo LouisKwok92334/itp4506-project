@@ -1,21 +1,19 @@
+/* CSS */
 .ConfirmAddress {
-  width: 80%; 
+  width: 80%;
 }
 
 .stretch-image {
   width: 90%;
   bottom: 25px;
   border-radius: 20px;
-  object-fit: fill; 
+  object-fit: fill;
 }
 
-.CA-bold-text {
+.CA-bold-text,
+.CA-text {
   font-weight: bold;
   margin-bottom: 3%;
-}
-.CA-text{
-margin-bottom: 3%;
-font-weight: bold;
 }
 
 .Address {
@@ -26,82 +24,49 @@ font-weight: bold;
   font-size: 16px;
 }
 
-.personal-details-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-
-
-.square-details:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
 .detail-text {
   font-weight: bold;
   font-size: 20px;
 }
 
 .address-container {
-
   display: flex;
 }
 
-.address-input {
-  width: 51%;
-  height: 40px;
+.CA-button-container {
   display: flex;
-  justify-content: space-around;
-  background-color: #fff;
-  border-radius: 10px;
+  justify-content: flex-end;
+  margin-top: 2%;
 }
 
-.edit-button {
-  background-color: #5c5cfd;
-  border: none;
-  color: white;
-  padding: 12px 20px;  /* Reduced padding */
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 15px;  /* Reduced font size */
-  border-radius: 10px;  /* Reduced border radius */
-  transition: background-color 0.3s ease;
-}
-.loc-edit-button {
-  width: 120px;
-  cursor: pointer;
+.edit-button, .CA-confirm-button {
   background-color: #5c5cfd;
   color: white;
   border: none;
   border-radius: 20px;
   transition: background-color 0.3s ease;
-}
-.edit-button:hover, .confirm-button:hover, .loc-edit-button:hover {
-  background-color: #4c4cfd;
+  padding: 25px;
 }
 
-
-.CA-button-container{
-  display: flex;
-  margin-top: 3%;
+.edit-button {
+  padding: 13px 23px;
+  font-size: 15px;
+  border-radius: 10px;
 }
 
 .CA-confirm-button {
-  background-color: #5c5cfd;
-  border: none;
-  color: white;
   padding: 16px 20px;
-  text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 15px;
-  margin-left: auto;
   font-weight: bold;
-  
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.edit-button:hover,
+.CA-confirm-button:hover{
+  background-color: #4a4ae8;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
 .Address {
@@ -114,22 +79,15 @@ font-weight: bold;
 
 .delivery-container {
   width: 100%;
-  padding: 20px;
+  padding: 3%;
   background-color: #e4e4e4;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   flex-direction: column;
   display: flex;
-padding: 3%;
   margin-right: 30px;
   margin-top: 3%;
 }
-
-.bold-text {
-  color: #343a40;
-  margin-bottom: 20px;
-}
-
 
 .delivery-label {
   margin-bottom: 10px;
@@ -141,15 +99,46 @@ padding: 3%;
   padding: 20px;
   border: 1px solid #ced4da;
   border-radius: 5px;
-margin-right: 20px;
+  margin-right: 20px;
 }
 
-.date-time{
+.date-time {
   padding: 1%;
 }
 
-.head{
+.head {
   display: flex;
   justify-content: space-between;
+}
 
+.address-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.address-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+.loc-edit-button {
+  margin-left: 11px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  background-color: #5c5cfd;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.loc-edit-button:hover {
+  background-color: #4a4ae8;
 }

@@ -7,6 +7,18 @@
     border-radius: 25px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
   }
+  .welcome-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .welcome-image {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 20px;
+  }
   
   .f-title {
     text-align: left;
