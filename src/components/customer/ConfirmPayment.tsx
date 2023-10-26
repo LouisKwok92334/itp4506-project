@@ -11,18 +11,22 @@ export function ConfirmPayment() {
 
   const products = [
     {
-      image: sushiImage,
-      title: "RIB-EYE AND SALMON STEAK",
-      description: "Lorem ipsum dolor sit, amet consectetur...",
-      price: "$50.40"
+      image: sushiImage, // you might want to change this to an appropriate image
+      title: "SALMON STEAK",
+      description: "Description of RIB-EYE AND SALMON STEAK...", // add an appropriate description
+      price: "$40.40" // set an appropriate price
     },
     {
       image: sushiImage,
-      title: "RIB-EYE AND SALMON STEAK",
-      description: "Lorem ipsum dolor sit, amet consectetur...",
-      price: "$50.40"
+      title: " SALMON STEAK",
+      description: "Fresh fish over perfectly seasoned rice...",
+      price: "$30.30"
     }
-  ];
+];
+const subtotal = products.reduce((acc, product) => {
+  return acc + parseFloat(product.price.replace('$', ''));
+}, 0).toFixed(2);
+
 
   const handlePaymentConfirmation = () => {
     navigate("/payment-successful");
@@ -31,11 +35,11 @@ export function ConfirmPayment() {
   return (
     <div className="CM-container">
       <div className="CM-shopping-cart">
-        <h2>SHOPPING CART</h2>
+        <h2>Shopping Cart</h2>
         {products.map((product, index) => (
           <div className="CM-product" key={index}>
             <img src={product.image} alt="product-image" />
-            <div>
+            <div className="product-info">
               <h3>{product.title}</h3>
               <p>{product.description}</p>
               <div className="product-controls">
@@ -46,7 +50,8 @@ export function ConfirmPayment() {
             </div>
           </div>
         ))}
-        <div className="subtotal">SUBTOTAL: $60.60</div>
+    <div className="subtotal">SUBTOTAL: ${subtotal}</div>
+
       </div>
 
       <div className="CM-payment">

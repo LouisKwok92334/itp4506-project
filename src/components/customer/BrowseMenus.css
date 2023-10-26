@@ -2,7 +2,7 @@
   font-size: 14px;
 }
 
-h3{
+h3 {
   font-size: 25px;
   font-weight: bold;
   color: #333;
@@ -15,7 +15,7 @@ h3{
 
 .more-tab {
   margin-left: 20px;
-  color: #007BFF;
+  color: #007bff;
 }
 
 .Popular-box {
@@ -27,7 +27,7 @@ h3{
   height: 50px;
   display: flex;
   justify-content: space-around;
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
   border-radius: 20px;
   margin: 20px;
 }
@@ -55,7 +55,7 @@ h3{
 }
 
 .Restaurant-box {
-  background-color: #f9f9f9; 
+  background-color: #f9f9f9;
   width: 25%;
   border-radius: 20px;
   padding: 3px;
@@ -68,7 +68,8 @@ h3{
   margin: 20px;
 }
 
-.restaurant-section, .favourite-section {
+.restaurant-section,
+.favourite-section {
   display: flex;
   margin-bottom: 3%;
   overflow-x: auto;

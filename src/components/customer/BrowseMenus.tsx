@@ -136,25 +136,25 @@ export function BrowseMenus() {
         <a href="#" className="more-tab">
           more
         </a>
-        </div>
-        <div className="favourite-section">
-          <div className="favourite-box">
-            <div className="box-item">
-              <img className="favourite-image" src={pizza} alt="pizza" />
-            </div>
-            <div className="favourite-contect-box">
-              <h3>Pizza</h3>
-            </div>
+      </div>
+      <div className="favourite-section">
+        <div className="favourite-box">
+          <div className="box-item">
+            <img className="favourite-image" src={pizza} alt="pizza" />
           </div>
-          <div className="favourite-box">
+          <div className="favourite-contect-box">
+            <h3>Pizza</h3>
+          </div>
+        </div>
+        <div className="favourite-box">
           <div className="box-item">
             <img className="favourite-image" src={cake} alt="cake" />
             <div className="favourite-contect-box">
               <h3>Cake</h3>
             </div>
           </div>
-          </div>
-          <div className="favourite-box">
+        </div>
+        <div className="favourite-box">
           <div className="box-item">
             <div>
               <img className="favourite-image" src={coffee} alt="coffee" />
@@ -163,8 +163,8 @@ export function BrowseMenus() {
               <h3>Coffee</h3>
             </div>
           </div>
-          </div>
-          <div className="favourite-box">
+        </div>
+        <div className="favourite-box">
           <div className="box-item">
             <div>
               <img className="favourite-image" src={sushi} alt="sushi" />
@@ -172,10 +172,10 @@ export function BrowseMenus() {
             <div className="favourite-contect-box">
               <h3>Sushi</h3>
             </div>
-            </div>
           </div>
+        </div>
 
-          <div className="favourite-box">
+        <div className="favourite-box">
           <div className="box-item">
             <div>
               <img className="favourite-image" src={Chicken} alt="Chicken" />
@@ -184,8 +184,8 @@ export function BrowseMenus() {
               <h3>Chicken</h3>
             </div>
           </div>
-          </div>
-          <div className="favourite-box">
+        </div>
+        <div className="favourite-box">
           <div className="box-item">
             <div>
               <img
@@ -194,13 +194,13 @@ export function BrowseMenus() {
                 alt="Restaurant A"
               />
             </div>
-            </div>
-            <div className="favourite-contect-box">
-              <h3>Dessert</h3>
-            </div>
           </div>
+          <div className="favourite-contect-box">
+            <h3>Dessert</h3>
+          </div>
+        </div>
 
-          <div className="favourite-box">
+        <div className="favourite-box">
           <div className="box-item">
             <div>
               <img
@@ -209,28 +209,24 @@ export function BrowseMenus() {
                 alt="Restaurant A"
               />
             </div>
-            </div>
-            <div className="favourite-contect-box">
-              <h3>Burgers</h3>
-            </div>
           </div>
+          <div className="favourite-contect-box">
+            <h3>Burgers</h3>
+          </div>
+        </div>
 
-          <div className="favourite-box">
+        <div className="favourite-box">
           <div className="box-item">
             <div>
-              <img
-                className="favourite-image"
-                src={Cakes}
-                alt="Restaurant A"
-              />
-            </div>
-            </div>
-            <div className="favourite-contect-box">
-              <h3>Cakes</h3>
+              <img className="favourite-image" src={Cakes} alt="Restaurant A" />
             </div>
           </div>
+          <div className="favourite-contect-box">
+            <h3>Cakes</h3>
+          </div>
+        </div>
 
-          <div className="favourite-box">
+        <div className="favourite-box">
           <div className="box-item">
             <div>
               <img
@@ -239,27 +235,23 @@ export function BrowseMenus() {
                 alt="Restaurant A"
               />
             </div>
-            </div>
-            <div className="favourite-contect-box">
-              <h3>Cantonese</h3>
-            </div>
           </div>
-
-          <div className="favourite-box">
-          <div className="box-item">
-            <div>
-              <img
-                className="favourite-image"
-                src={Curry}
-                alt="Restaurant A"
-              />
-            </div>
-            </div>
-            <div className="favourite-contect-box">
-              <h3>Curry</h3>
-            </div>
+          <div className="favourite-contect-box">
+            <h3>Cantonese</h3>
           </div>
         </div>
+
+        <div className="favourite-box">
+          <div className="box-item">
+            <div>
+              <img className="favourite-image" src={Curry} alt="Restaurant A" />
+            </div>
+          </div>
+          <div className="favourite-contect-box">
+            <h3>Curry</h3>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
