@@ -79,13 +79,6 @@ h3 {
   margin: 20px;
 }
 
-.dd-Restaurant-box {
-  background-color: #f9f9f9;
-  border-radius: 20px;
-  padding: 3px;
-  margin: 20px;
-}
-
 .box-item {
   display: flex;
   flex-direction: column;

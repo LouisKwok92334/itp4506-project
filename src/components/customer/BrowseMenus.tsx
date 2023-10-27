@@ -55,6 +55,9 @@ export function BrowseMenus() {
         <button className="search-btn">Search</button>
       </div>
 
+      <div style={{ display: time <= 10 ? 'none' : '' }}>
+
+
       <div className="header">
         <h2>
           <strong>Get 25% off</strong>
@@ -62,13 +65,14 @@ export function BrowseMenus() {
       </div>
 
       <div className="discount-section">
-        <div className="timer">
-          <p>
-            Time is running out! {Math.floor(time / 60)}:
-            {("0" + (time % 60)).slice(-2)}
-          </p>
-        </div>
-        <div className="dd-Restaurant-box">
+          <div className="timer">
+            <p>
+              Time is running out! {Math.floor(time / 60)}:
+              {("0" + (time % 60)).slice(-2)}
+            </p>
+          </div>
+
+        <div className="Restaurant-box">
           <div className="box-item">
             <img className="restaurant-image" src={GoldLabel} alt="GoldLabel" />
             <div className="contect-box">
@@ -81,9 +85,40 @@ export function BrowseMenus() {
           </div>
         </div>
 
+        <div className="Restaurant-box">
+          <div className="box-item">
+            <img className="restaurant-image" src={Zeppelin} alt="Zeppelin" />
+            <div className="contect-box">
+              <h3>Zeppelin Hot Dog</h3>
+              <p>4.5/5 (3000+)</p>
+              <p>$$$</p>
+              <p>Cha Chaan Teng</p>
+              <p>HK$ 15 Delivery fee</p>
+            </div>
+          </div>
+        </div>
+
+         <div className="Restaurant-box">
+          <NavLink to="/restaurant-menus" className="nav-link">
+            <div className="box-item">
+              <img className="restaurant-image" src={SamGor} alt="SamGor" />
+              <div className="contect-box">
+                <h3>TamJai SamGor</h3>
+                <p>5/5 (3000+)</p>
+                <p>$$$</p>
+                <p>Cha Chaan Teng</p>
+                <p>HK$ 10 Delivery fee</p>
+              </div>
+            </div>
+          </NavLink>
+        </div>
+
 
         
       </div>
+
+      </div>
+
 
       <div className="header">
         <h2>
