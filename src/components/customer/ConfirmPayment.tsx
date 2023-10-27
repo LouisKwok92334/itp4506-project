@@ -77,37 +77,31 @@ export function ConfirmPayment() {
     <input 
       type="text" 
       id="cardholder-name" 
-      placeholder="John Doe" 
+      value="John Doe" 
       required 
-      value={cardNumber}  
-      onChange={e => setCardNumber(e.target.value)}  
     />
 
     <label htmlFor="card-number">Credit/Debit Card Number</label>
     <input 
       type="text" 
       id="card-number" 
-      placeholder="1234 5678 9012 3456" 
+      value="1234 5678 9012 3456" 
       required 
-      value={expiryDate}  
-      onChange={e => setExpiryDate(e.target.value)} 
     />
 
     <label htmlFor="exp-date">Card Expiry Date</label>
     <input 
       type="text" 
       id="exp-date" 
-      placeholder="MM/YY" 
+      value="MM/YY" 
       required 
-      value={cvv}  
-      onChange={e => setCvv(e.target.value)}  
     />
 
     <label htmlFor="cvv">Security Code (CVV)</label>
     <input 
       type="text" 
       id="cvv" 
-      placeholder="123" 
+      value="123" 
       required 
     />
   </div>

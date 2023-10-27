@@ -96,7 +96,7 @@
 }
 
 .delivery-select {
-  padding: 20px;
+  padding: 10px 20px;
   border: 1px solid #ced4da;
   border-radius: 5px;
   margin-right: 20px;
@@ -132,7 +132,7 @@
   margin-left: 11px;
   padding: 10px 20px;
   font-size: 16px;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: #5c5cfd;
   color: white;
   border: none;

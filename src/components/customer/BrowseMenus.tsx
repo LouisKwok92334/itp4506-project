@@ -51,7 +51,10 @@ export function BrowseMenus() {
     <div className="BrowseMenus">
       <FoodCarousel />
       <div className="search">
-        <input type="text" placeholder="What you want to eat?" />
+        <div>
+          <span>🔎</span>
+          <input type="text" placeholder="What you want to eat?"></input>
+        </div>
         <button className="search-btn">Search</button>
       </div>
 
@@ -78,9 +81,9 @@ export function BrowseMenus() {
             <div className="contect-box">
               <h3>Gold Label</h3>
               <p>4.4/5 (3000+)</p>
-              <p>$$$</p>
+              <strong>$$$</strong>
               <p>Cha Chaan Teng</p>
-              <p>HK$ 5 Delivery fee</p>
+              <p>🚲HK$ 15 Delivery</p>
             </div>
           </div>
         </div>
@@ -91,9 +94,9 @@ export function BrowseMenus() {
             <div className="contect-box">
               <h3>Zeppelin Hot Dog</h3>
               <p>4.5/5 (3000+)</p>
-              <p>$$$</p>
+              <strong>$$</strong>
               <p>Cha Chaan Teng</p>
-              <p>HK$ 15 Delivery fee</p>
+              <p>🚲HK$ 15 Delivery fee</p>
             </div>
           </div>
         </div>
@@ -105,9 +108,9 @@ export function BrowseMenus() {
               <div className="contect-box">
                 <h3>TamJai SamGor</h3>
                 <p>5/5 (3000+)</p>
-                <p>$$$</p>
+                <strong>$$</strong>
                 <p>Cha Chaan Teng</p>
-                <p>HK$ 10 Delivery fee</p>
+                <p>🚲HK$ 15 Delivery fee</p>
               </div>
             </div>
           </NavLink>
@@ -136,9 +139,9 @@ export function BrowseMenus() {
             <div className="contect-box">
               <h3>Gold Label</h3>
               <p>4.4/5 (3000+)</p>
-              <p>$$$</p>
+              <strong>$$$</strong>
               <p>Cha Chaan Teng</p>
-              <p>HK$ 5 Delivery fee</p>
+              <p>🚲HK$ 5 Delivery fee</p>
             </div>
           </div>
         </div>
@@ -148,9 +151,9 @@ export function BrowseMenus() {
             <div className="contect-box">
               <h3>Zeppelin Hot Dog</h3>
               <p>4.5/5 (3000+)</p>
-              <p>$$$</p>
+              <strong>$$</strong>
               <p>Cha Chaan Teng</p>
-              <p>HK$ 15 Delivery fee</p>
+              <p>🚲HK$ 15 Delivery fee</p>
             </div>
           </div>
         </div>
@@ -160,9 +163,9 @@ export function BrowseMenus() {
             <div className="contect-box">
               <h3>Gin Curry</h3>
               <p>3/5 (3000+)</p>
-              <p>$$$</p>
+              <strong>$</strong>
               <p>Cha Chaan Teng</p>
-              <p>HK$ 25 Delivery fee</p>
+              <p>🚲HK$ 25 Delivery fee</p>
             </div>
           </div>
         </div>
@@ -176,9 +179,9 @@ export function BrowseMenus() {
             <div className="contect-box">
               <h3>Chatpoint</h3>
               <p>3.2/5 (3000+)</p>
-              <p>$$$</p>
+              <strong>$$</strong>
               <p>Cha Chaan Teng</p>
-              <p>HK$ 10 Delivery fee</p>
+              <p>🚲HK$ 10 Delivery fee</p>
             </div>
           </div>
         </div>
@@ -189,9 +192,9 @@ export function BrowseMenus() {
               <div className="contect-box">
                 <h3>TamJai SamGor</h3>
                 <p>5/5 (3000+)</p>
-                <p>$$$</p>
+                <strong>$$</strong>
                 <p>Cha Chaan Teng</p>
-                <p>HK$ 10 Delivery fee</p>
+                <p>🚲HK$ 10 Delivery fee</p>
               </div>
             </div>
           </NavLink>
@@ -202,9 +205,9 @@ export function BrowseMenus() {
             <div className="contect-box">
               <h3>Tomato Club</h3>
               <p>3.2/5 (3000+)</p>
-              <p>$$$</p>
+              <strong>$$$</strong>
               <p>Cha Chaan Teng</p>
-              <p>HK$ 10 Delivery fee</p>
+              <p>🚲HK$ 10 Delivery fee</p>
             </div>
           </div>
         </div>

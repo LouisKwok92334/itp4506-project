@@ -106,8 +106,8 @@ export function OnlineTracking() {
                   <input
                     type="info-text"
                     id="nameField"
-                    placeholder="Name"
-                    value={"Jane Doe"}
+                    value="Name"
+                    placeholder={"Jane Doe"}
                   />
                 </div>
                 <div className="info-input">
@@ -115,8 +115,8 @@ export function OnlineTracking() {
                   <input
                     type="info-text"
                     id="phoneField"
-                    placeholder="Phone"
-                    value={"123-456-7890"}
+                    value="Phone"
+                    placeholder={"123-456-7890"}
                   />
                 </div>
               </div>

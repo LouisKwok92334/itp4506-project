@@ -7,18 +7,21 @@ export function RestaurantMenu() {
   return (
     <div className="RestaurantMenu">
       <div className="menu-item-container">
-        <div>
-          <h2>TamJai SamGor Mixian</h2>
-          <h6>HK$ 15 Delivery, HK$ 80 Minimum</h6>
+        <div className="menu-item-display">
+          <div>
+            <h2>TamJai SamGor Mixian</h2>
+            <h6>🚲HK$ 15 Delivery, 👜HK$ 80 Minimum</h6>
+          </div>
           <img
             src={"/tamJai-images/logo.jpg"}
             alt="Logo"
-            style={{ height: "70px" }}
+            style={{ height: "100px" }}
           />
         </div>
         <div className="list-container">
-          <div className="search-bar">
-            <input type="text" placeholder="Search.." name="search" />
+          <div className="search-container">
+            <span>🔎</span>
+            <input type="text" placeholder="Search in menu" name="search" />
           </div>
           <div className="list-bar">
             <ul>
