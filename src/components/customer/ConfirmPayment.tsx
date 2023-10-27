@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ConfirmPayment.css";
 import { useNavigate } from "react-router-dom";
-import sushiImage from "../../images/sushi.png";
+import sushiImage from "../../images/Value_Set_for_2.jpg";
 
 export function ConfirmPayment() {
   const navigate = useNavigate();
@@ -11,32 +11,25 @@ export function ConfirmPayment() {
 
   const products = [
     {
-      image: sushiImage, // you might want to change this to an appropriate image
-      title: "SALMON STEAK",
-      description: "Description of RIB-EYE AND SALMON STEAK...", // add an appropriate description
-      price: "$40.40" // set an appropriate price
-    },
-    {
       image: sushiImage,
-      title: " SALMON STEAK",
-      description: "Fresh fish over perfectly seasoned rice...",
-      price: "$30.30"
-    }
-];
-const subtotal = products.reduce((acc, product) => {
-  return acc + parseFloat(product.price.replace('$', ''));
-}, 0).toFixed(2);
+      title: "TamJai SamGor",
+      description: "Value Set for 2",
+      price: "$40.40",
+    },
 
+  ];
+  const subtotal = products
+    .reduce((acc, product) => {
+      return acc + 15 + parseFloat(product.price.replace("$", ""));
+    }, 0)
+    .toFixed(2);
 
   const handlePaymentConfirmation = () => {
     navigate("/payment-successful");
   };
 
   return (
-
-    
     <div className="CM-container">
-
       <div className="CM-shopping-cart">
         <h2>Shopping Cart</h2>
         {products.map((product, index) => (
@@ -46,15 +39,14 @@ const subtotal = products.reduce((acc, product) => {
               <h3>{product.title}</h3>
               <p>{product.description}</p>
               <div className="product-controls">
-                <span>{product.price}</span>
-                <div className="quantity-controls">
-                </div>
+                <span>Total: {product.price}</span>
+                <div className="quantity-controls"></div>
               </div>
             </div>
           </div>
         ))}
-    <div className="subtotal">SUBTOTAL: ${subtotal}</div>
-
+        <div className="delivery">Delivery: $15</div>
+        <div className="subtotal">Total: ${subtotal}</div>
       </div>
 
       <div className="CM-payment">
@@ -62,7 +54,7 @@ const subtotal = products.reduce((acc, product) => {
         <form onSubmit={handlePaymentConfirmation}>
           <div className="payment-options">
             <label>
-              <input type="radio" name="payment" value="cod" />  Cash On Delivery
+              <input type="radio" name="payment" value="cod" /> Cash On Delivery
               (COD)
             </label>
             <label>
@@ -71,7 +63,8 @@ const subtotal = products.reduce((acc, product) => {
                 name="payment"
                 value="online"
                 defaultChecked
-              />    Online Payment
+              />{" "}
+              Online Payment
             </label>
           </div>
           <div className="card-details">
@@ -96,12 +89,16 @@ const subtotal = products.reduce((acc, product) => {
             />
           </div>
           <div className="CP-button-container">
-          <button className="CM-back-button" onClick={() => navigate("/confirm-address")}>
-        Back
-      </button>
-          <button type="submit" className="CM-button">Checkout</button>
+            <button
+              className="CM-back-button"
+              onClick={() => navigate("/confirm-address")}
+            >
+              Back
+            </button>
+            <button type="submit" className="CM-button">
+              Checkout
+            </button>
           </div>
-      
         </form>
       </div>
     </div>

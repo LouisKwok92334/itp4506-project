@@ -5,6 +5,18 @@ import locationImage from '../../images/Location.png';
 import DoneAllAltRoundIcon from '../../svg/done-all-alt-round.svg';
 import NotAllAltRoundIcon from '../../svg/Not_done.svg';
 
+import { useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 
 export function OnlineTracking() {
   const [orderStatuses, setOrderStatuses] = useState([
@@ -13,14 +25,12 @@ export function OnlineTracking() {
     { name: 'food is picked up', isCompleted: false, time: null },
     { name: 'food has been delivered', isCompleted: false, time: null },
   ]);
-  <div>
-  <h2>Your Order</h2>
-  {/* 添加其他的内容... */}
-</div>
+
   const navigate = useNavigate();
 
   const handleViewOrderClick = () => {
     navigate("/payment-successful");
+  
   };
   
   useEffect(() => {
@@ -36,7 +46,7 @@ export function OnlineTracking() {
           return status;
         })
       );
-    }, 10 * 1000); // 10 seconds
+    }, 10* 1000); // 10 seconds
 
     const deliveryStatus = orderStatuses.find(
       (status) => status.name === 'food has been delivered'
@@ -44,7 +54,9 @@ export function OnlineTracking() {
     if (deliveryStatus && deliveryStatus.isCompleted) {
       setTimeout(() => {
         navigate('/feedback');
+        window.scrollTo(0, 0);
       }, 1000); // Redirect after 1 second
+     
     }
 
     return () => clearInterval(timer); // cleanup on unmount
@@ -52,12 +64,13 @@ export function OnlineTracking() {
 
   return (
     <div className="OnlineTracking">
+       <ScrollToTop />
       <div className="title">
         <h1>
           <span>Track Order</span>
 
         </h1>
-        <span>ID:xxxxxxx</span>
+        <span>ID:NM197722</span>
       </div>
       <img src={locationImage} alt="Location" className="locationImage" />
 
@@ -84,7 +97,7 @@ export function OnlineTracking() {
           ))}
         </div>
         <div className="text-box">
-          <div className="tracking-square">
+
             <div className = "OT-Delivery-box">
               <h3 className="OT-bold-text">Delivery Staff Information</h3>
               <div className="tracking-input">
@@ -108,10 +121,11 @@ export function OnlineTracking() {
                 </div>
               </div>
             </div>
+            <button className="tracking-button" onClick={handleViewOrderClick}>View Order</button>
           </div>
-          <button className="tracking-button" onClick={handleViewOrderClick}>View Order</button>
+      
         </div>
       </div>
-    </div>
+
   );
 }

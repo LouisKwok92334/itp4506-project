@@ -10,10 +10,8 @@
   padding: 40px;
 }
 
-
-
-
-.CM-shopping-cart, .CM-payment {
+.CM-shopping-cart,
+.CM-payment {
   display: flex;
   flex-direction: column;
   border-radius: 15px;
@@ -22,8 +20,9 @@
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   padding-bottom: 50px;
 }
-.CM-shopping-cart h2, .CM-payment h2 {
-  margin-bottom: 50px;  
+.CM-shopping-cart h2,
+.CM-payment h2 {
+  margin-bottom: 50px;
 }
 
 .CM-product {
@@ -34,17 +33,18 @@
   padding-bottom: 35px;
 }
 
-.product-info{
-  margin:20px;
+.product-info {
+  margin: 20px;
 }
 
 .CM-product img {
-  width: 150px;
+  width: 180px;
   height: 150px;
   border-radius: 15px;
 }
 
-.product-controls, .quantity-controls {
+.product-controls,
+.quantity-controls {
   display: flex;
   align-items: center;
 }
@@ -62,7 +62,10 @@
   text-align: right;
 }
 
-
+.delivery {
+  font-size: 20px;
+  text-align: right;
+}
 
 .card-details input {
   width: 100%;
@@ -74,14 +77,14 @@
 }
 
 .card-details input:focus {
-  border-color: #007BFF;
-  box-shadow: 0 0 10px rgba(0,123,255, 0.5);
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .CM-button {
   padding: 18px 28px;
   border: none;
-  background-color: #007BFF;
+  background-color: #007bff;
   color: white;
   border-radius: 10px;
   cursor: pointer;
@@ -94,7 +97,7 @@
   background-color: #0056b3;
 }
 
-.CM-back-button{
+.CM-back-button {
   padding: 18px 28px;
   border: none;
   background-color: #ff3f3f;
@@ -105,9 +108,8 @@
   transition: background-color 0.3s ease;
   margin-left: 10px;
 }
-.CM-back-button:hover{
+.CM-back-button:hover {
   background-color: #cf322a;
-
 }
 .CP-button-container {
   display: flex;
@@ -116,5 +118,5 @@
 
 .payment-options label {
   display: block;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
 }

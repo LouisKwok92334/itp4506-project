@@ -12,6 +12,10 @@ body {
   padding: 25px;
 }
 
+.text-container{
+  margin: 30px;
+}
+
 .SF-header {
   display: flex;
   justify-content: space-between;

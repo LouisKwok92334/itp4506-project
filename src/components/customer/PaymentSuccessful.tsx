@@ -1,7 +1,7 @@
 import React from "react";
 import './PaymentSuccessful.css';
 import { useNavigate } from "react-router-dom";
-import ginRestImage from "../../images/Gin-rest.png";
+import ginRestImage from "../../images/Value_Set_for_2.jpg";
 import confirm from "../../images/confirm.png";
 
 export function PaymentSuccessful() {
@@ -16,7 +16,7 @@ export function PaymentSuccessful() {
       <div className="order-details-container">
       <div className="SF-header">
           <h2 className="bold-text">Payment Successful</h2>
-          <span className="orderId">ID: XXXXXXX</span>
+          <span className="orderId">ID: NM197722</span>
         </div>
         <div className="SF-square">
           <div className="SF-content-container">
@@ -26,15 +26,14 @@ export function PaymentSuccessful() {
               className="SF-restaurant-img"
             />
             <div className="text-container">
-              <h3 className="restaurant-name">Restaurant Name</h3>
+              <h3 className="restaurant-name">TamJai SamGor</h3>
               <ul className="food-list">
-                <li>Food Item 1</li>
-                <li>Food Item 2</li>
-                <li>Food Item 3</li>
+                <li>Value Set for 2</li>
+            
               </ul>
               <hr className="divider" />
-              <p className="total-cost">Total cost: $XX.XX</p>
-              <p className="delivery-fee">Delivery fee: $X.XX</p>
+              <p className="delivery-fee">Delivery fee: $15</p>
+              <p className="total-cost">Total cost: $55.40</p>
             </div>
           </div>
         </div>
