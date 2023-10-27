@@ -9,6 +9,18 @@ export function ConfirmPayment() {
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
 
+  const handlePaymentConfirmation = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();  
+    
+    if (!cardNumber || !expiryDate || !cvv || cardNumber.trim() === "" || expiryDate.trim() === "" || cvv.trim() === "") {
+      alert("Please fill out all fields!");  
+      return;  
+    }
+    
+    navigate("/payment-successful");  
+  };
+  
+
   const products = [
     {
       image: sushiImage,
@@ -24,9 +36,6 @@ export function ConfirmPayment() {
     }, 0)
     .toFixed(2);
 
-  const handlePaymentConfirmation = () => {
-    navigate("/payment-successful");
-  };
 
   return (
     <div className="CM-container">
@@ -67,27 +76,21 @@ export function ConfirmPayment() {
               Online Payment
             </label>
           </div>
+      
           <div className="card-details">
-            <input type="text" placeholder="Cardholder Name" />
-            <input
-              type="text"
-              placeholder="Card Number"
-              value={cardNumber}
-              onChange={(e) => setCardNumber(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Exp Date"
-              value={expiryDate}
-              onChange={(e) => setExpiryDate(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="CVV"
-              value={cvv}
-              onChange={(e) => setCvv(e.target.value)}
-            />
-          </div>
+  <label htmlFor="cardholder-name">Name on Card</label>
+  <input type="text" id="cardholder-name" placeholder="John Doe" required />
+
+  <label htmlFor="card-number">Credit/Debit Card Number</label>
+  <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required />
+
+  <label htmlFor="exp-date">Card Expiry Date</label>
+  <input type="text" id="exp-date" placeholder="MM/YY" required value=""/>
+
+  <label htmlFor="cvv">Security Code (CVV)</label>
+  <input type="text" id="cvv" placeholder="123" required value=""/>
+</div>
+
           <div className="CP-button-container">
             <button
               className="CM-back-button"

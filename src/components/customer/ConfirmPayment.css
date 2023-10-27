@@ -84,7 +84,7 @@
 .CM-button {
   padding: 18px 28px;
   border: none;
-  background-color: #007bff;
+  background-color: #0056b3; 
   color: white;
   border-radius: 10px;
   cursor: pointer;
@@ -94,13 +94,13 @@
 }
 
 .CM-button:hover {
-  background-color: #0056b3;
+  background-color: #003f8f; 
 }
 
 .CM-back-button {
   padding: 18px 28px;
   border: none;
-  background-color: #ff3f3f;
+  background-color: #cf322a;
   color: white;
   border-radius: 10px;
   cursor: pointer;
@@ -109,8 +109,9 @@
   margin-left: 10px;
 }
 .CM-back-button:hover {
-  background-color: #cf322a;
+  background-color: #b3201c;
 }
+
 .CP-button-container {
   display: flex;
   justify-content: flex-end;
@@ -119,4 +120,9 @@
 .payment-options label {
   display: block;
   margin-bottom: 20px;
+}
+
+.card-details label {
+  display: block;     
+  margin-bottom: 10px; 
 }
