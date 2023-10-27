@@ -11,12 +11,7 @@ export function ConfirmPayment() {
 
   const handlePaymentConfirmation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();  
-    
-    if (!cardNumber || !expiryDate || !cvv || cardNumber.trim() === "" || expiryDate.trim() === "" || cvv.trim() === "") {
-      alert("Please fill out all fields!");  
-      return;  
-    }
-    
+  
     navigate("/payment-successful");  
   };
   
@@ -77,19 +72,46 @@ export function ConfirmPayment() {
             </label>
           </div>
       
-          <div className="card-details">
-  <label htmlFor="cardholder-name">Name on Card</label>
-  <input type="text" id="cardholder-name" placeholder="John Doe" required />
+  <div className="card-details">
+    <label htmlFor="cardholder-name">Name on Card</label>
+    <input 
+      type="text" 
+      id="cardholder-name" 
+      placeholder="John Doe" 
+      required 
+      value={cardNumber}  
+      onChange={e => setCardNumber(e.target.value)}  
+    />
 
-  <label htmlFor="card-number">Credit/Debit Card Number</label>
-  <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required />
+    <label htmlFor="card-number">Credit/Debit Card Number</label>
+    <input 
+      type="text" 
+      id="card-number" 
+      placeholder="1234 5678 9012 3456" 
+      required 
+      value={expiryDate}  
+      onChange={e => setExpiryDate(e.target.value)} 
+    />
 
-  <label htmlFor="exp-date">Card Expiry Date</label>
-  <input type="text" id="exp-date" placeholder="MM/YY" required value=""/>
+    <label htmlFor="exp-date">Card Expiry Date</label>
+    <input 
+      type="text" 
+      id="exp-date" 
+      placeholder="MM/YY" 
+      required 
+      value={cvv}  
+      onChange={e => setCvv(e.target.value)}  
+    />
 
-  <label htmlFor="cvv">Security Code (CVV)</label>
-  <input type="text" id="cvv" placeholder="123" required value=""/>
-</div>
+    <label htmlFor="cvv">Security Code (CVV)</label>
+    <input 
+      type="text" 
+      id="cvv" 
+      placeholder="123" 
+      required 
+    />
+  </div>
+
 
           <div className="CP-button-container">
             <button
