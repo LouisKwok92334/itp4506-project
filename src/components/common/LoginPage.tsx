@@ -25,6 +25,8 @@ export function LoginPage() {
   const navigate = useNavigate();
 
   const handleUserType = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    
     const target = event.target as HTMLButtonElement;
     setUserType(target.id);
   };
