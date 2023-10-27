@@ -7,6 +7,36 @@ function DeliveryTimeSelector() {
   const [deliveryDate, setDeliveryDate] = useState("");
   const [deliveryTime, setDeliveryTime] = useState("");
 
+  const getUpcomingDates = (days: number) => {
+    const result = [];
+    for (let i = 0; i < days; i++) {
+      const date = new Date();
+      date.setDate(date.getDate() + i);
+      const yyyy = date.getFullYear();
+      const mm = String(date.getMonth() + 1).padStart(2, '0');
+      const dd = String(date.getDate()).padStart(2, '0');
+      result.push({
+        value: `${yyyy}-${mm}-${dd}`,
+        label: date.toLocaleDateString("en-US", { month: 'long', day: 'numeric', year: 'numeric' })
+      });
+    }
+    return result;
+  };
+
+  const getTimeOptions = () => {
+    const result = [];
+    for (let i = 0; i < 24; i += 0.5) {
+      const hour = Math.floor(i);
+      const minute = (i - hour) * 60;
+      const timeStr = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+      result.push({
+        value: timeStr,
+        label: timeStr + (hour < 12 ? ' AM' : ' PM')
+      });
+    }
+    return result;
+  };
+
   return (
     <div className="delivery-container">
       <div className="date-time">
@@ -14,18 +44,12 @@ function DeliveryTimeSelector() {
         <DropDown 
           value={deliveryDate}
           onChange={(e) => setDeliveryDate(e.target.value)}
-          options={[
-            {value: "2023-10-26", label: "October 26, 2023"},
-            {value: "2023-10-27", label: "October 27, 2023"},
-          ]}
+          options={getUpcomingDates(7)}
         />
         <DropDown 
           value={deliveryTime}
           onChange={(e) => setDeliveryTime(e.target.value)}
-          options={[
-            {value: "09:00", label: "09:00 AM"},
-            {value: "13:00", label: "01:00 PM"},
-          ]}
+          options={getTimeOptions()}
         />
       </div>
     </div>
@@ -97,20 +121,43 @@ function AddressInput() {
     </div>
   );
 }
-
 function PersonalDetails() {
+  const [isEditing, setIsEditing] = useState(false);
+  const [name, setName] = useState("Bosco Chuen");
+  const [email, setEmail] = useState("bosco.chuen@gmail.com");
+  const [phone, setPhone] = useState("+852 53300440");
+
   return (
     <div className="delivery-container">
       <div className="head">
         <h2 className="CA-text">Personal details</h2>
         <div>
-        <button className="edit-button">Edit</button>
+          <button className="edit-button" onClick={() => setIsEditing(!isEditing)}>
+            {isEditing ? "Save" : "Edit"}
+          </button>
         </div>
       </div>
-      <p className="detail-text">Bosco Chuen</p>
-      <p className="detail-text">bosco.chuen@gmail.com</p>
-      <p className="detail-text">+852 53300440</p>
+
+      {isEditing ? (
+      <div className="input-container">
+<input className="detail-input" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
+          <input className="detail-input" type="text" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+          <input className="detail-input" type="text" value={phone} onChange={(e) => setPhone(e.target.value)} placeholder="Phone" />
+        </div>
+      ) : (
+        <div>
+          <p className="detail-text">{name}</p>
+          <p className="detail-text">{email}</p>
+          <p className="detail-text">{phone}</p>
+        </div>
+      )}
     </div>
   );
 }
+
+export default PersonalDetails;
+
+
+
+
 

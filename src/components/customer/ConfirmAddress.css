@@ -142,3 +142,23 @@
 .loc-edit-button:hover {
   background-color: #4a4ae8;
 }
+
+.input-container {
+  display: flex;
+  width: 20%;
+  flex-direction: column; /* 使輸入框垂直排列 */
+  gap: 10px; /* 在輸入框之間添加一些間隙 */
+}
+
+.detail-input {
+  padding: 8px 12px; /* 增加一些填充，使輸入框看起來更大 */
+  font-size: 14px;
+  border: 1px solid #ccc; /* 添加一些邊框 */
+  border-radius: 4px; /* 輕微的圓角 */
+  transition: border 0.2s, box-shadow 0.2s; /* 使輸入框具有一些動畫效果 */
+}
+
+.detail-input:focus {
+  border-color: #007BFF; /* 當輸入框聚焦時的邊框顏色 */
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* 當輸入框聚焦時的陰影 */
+}
