@@ -10,19 +10,19 @@ import {
 
 const items = [
   {
-    src: require("../../images/food-poster.webp"),
+    src: require("../../images/Carousel_1.webp"),
     altText: 'Slide 1',
     caption: 'Caption for Slide 1',
     key: 1,
   },
   {
-    src: require("../../images/food-poster2.png"),
+    src: require("../../images/Carousel_2.webp"),
     altText: 'Slide 2',
     caption: 'Caption for Slide 2',
     key: 2,
   },
   {
-    src: require("../../images/food-poster.png"),
+    src: require("../../images/Carousel_3.webp"),
     altText: 'Slide 3',
     caption: 'Caption for Slide 3',
     key: 3,

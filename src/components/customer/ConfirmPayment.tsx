@@ -2,12 +2,15 @@ import React, { useState } from "react";
 import "./ConfirmPayment.css";
 import { useNavigate } from "react-router-dom";
 import sushiImage from "../../images/Value_Set_for_2.jpg";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export function ConfirmPayment() {
   const navigate = useNavigate();
-  const [cardNumber, setCardNumber] = useState("");
+  const [cardName, setCardName] = useState("Bosco Chuen");
+  const [cardNumber, setCardNumber] = useState("3500 1234 5678 0000");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
+  const { clearCart } = useShoppingCart();
 
   const handlePaymentConfirmation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();  
@@ -77,7 +80,9 @@ export function ConfirmPayment() {
     <input 
       type="text" 
       id="cardholder-name" 
-      value="John Doe" 
+      placeholder="John Doe" 
+      value={cardName}
+      onChange={(e) => setCardName(e.target.value)}
       required 
     />
 
@@ -85,7 +90,9 @@ export function ConfirmPayment() {
     <input 
       type="text" 
       id="card-number" 
-      value="1234 5678 9012 3456" 
+      placeholder="1234 5678 9012 3456" 
+      value={cardNumber}
+      onChange={(e) => setCardNumber(e.target.value)}
       required 
     />
 
@@ -93,7 +100,9 @@ export function ConfirmPayment() {
     <input 
       type="text" 
       id="exp-date" 
-      value="MM/YY" 
+      placeholder="MM/YY" 
+      value={expiryDate}
+      onChange={(e) => setExpiryDate(e.target.value)}
       required 
     />
 
@@ -101,7 +110,9 @@ export function ConfirmPayment() {
     <input 
       type="text" 
       id="cvv" 
-      value="123" 
+      placeholder="CVV"
+      value={cvv}
+      onChange={(e) => setCvv(e.target.value)}
       required 
     />
   </div>
@@ -113,8 +124,8 @@ export function ConfirmPayment() {
               onClick={() => navigate("/confirm-address")}
             >
               Back
-            </button>
-            <button type="submit" className="CM-button">
+            </button> 
+            <button type="submit" className="CM-button" onClick={() => clearCart()}>
               Checkout
             </button>
           </div>

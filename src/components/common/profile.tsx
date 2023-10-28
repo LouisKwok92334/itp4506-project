@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { BiSolidError } from 'react-icons/bi';
 import "./Profile.css";
@@ -85,15 +85,15 @@ export function Profile() {
         <form onSubmit={handlePaymentForm}>
           <div className="form-group">
             <label>Card Number</label>
-            <input type="text" required pattern="\d{16}" />
+            <input type="text" required placeholder="0000 0000 0000 0000"/>
           </div>
           <div className="form-group">
             <label>Expiry Date</label>
-            <input type="month" required />
+            <input type="month" required placeholder="MM/YY"/>
           </div>
           <div className="form-group">
             <label>CVV</label>
-            <input type="password" required pattern="\d{3}" />
+            <input type="password" required pattern="\d{3}" placeholder="000"/>
           </div>
           <button type="submit">Save</button>
         </form>

@@ -83,7 +83,7 @@ export function LoginPage() {
             navigate('/browse-menus');
             break;
           case 'restaurant':
-            navigate('/manage-menus');
+            navigate('/manage-users');
             break;
           case 'delivery':
             navigate('/delivery-Instructions');

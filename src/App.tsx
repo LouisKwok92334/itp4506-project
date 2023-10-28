@@ -14,6 +14,7 @@ import { ConfirmPayment } from "./components/customer/ConfirmPayment";
 import { PaymentSuccessful } from "./components/customer/PaymentSuccessful";
 import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
 import { Feedback } from "./components/customer/Feedback";
+import { ManageUser } from "./components/restaurant/ManageUser";
 
 function AppRoutes() {
   return (
@@ -44,6 +45,7 @@ function App() {
           {/* delivery */}
           <Route path="/delivery-instructions" element={<DeliveryInstructions />} />
           {/* restaurant */}
+          <Route path="/manage-users" element={<ManageUser />} />
           <Route path="/manage-menus" element={<ManageMenus />} />
         </Route>
       </Routes>
