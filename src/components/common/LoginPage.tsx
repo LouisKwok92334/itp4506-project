@@ -7,6 +7,7 @@ import usersData from '../../json/users.json';
 import Logo from "../../images/Logo.png";
 import "./LoginPage.css";
 import { useNavigate } from 'react-router-dom';
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
 export function LoginPage() {
   const [userType, setUserType] = useState<string>("customer");
@@ -74,6 +75,10 @@ export function LoginPage() {
         setMessage("Incorrect user type");
         return;
       }
+
+      /* Save user login data */
+      localStorage.setItem('userType', userType);
+      localStorage.setItem('username', usernameInput);
   
       setMessageType('success');
       setMessage("login successful, 3 seconds to redirect");
@@ -83,7 +88,7 @@ export function LoginPage() {
             navigate('/browse-menus');
             break;
           case 'restaurant':
-            navigate('/manage-menus');
+            navigate('/manage-order');
             break;
           case 'delivery':
             navigate('/delivery-Instructions');

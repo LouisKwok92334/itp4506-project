@@ -14,6 +14,9 @@ type FoodItemProps = {
 }
 
 export function FoodItem({ id, name, description, price, imgUrl, onDelete, onSave }: FoodItemProps) {
+    const { getItemQuantity, increaseItemQuantity, decreaseItemQuantity, removeFromCart } = useShoppingCart();
+    const quantity = getItemQuantity(id);
+
     const [isEditMode, setIsEditMode] = useState(false);
     const [editableName, setEditableName] = useState(name);
     const [editableDescription, setEditableDescription] = useState(description);
@@ -21,6 +24,9 @@ export function FoodItem({ id, name, description, price, imgUrl, onDelete, onSav
     const [showConfirmModal, setShowConfirmModal] = useState(false);
     const [showDeleteConfirmModal, setShowDeleteConfirmModal] = useState(false);
     const [editableImgUrl, setEditableImgUrl] = useState(imgUrl);
+
+    const userType = localStorage.getItem('userType');
+    const username = localStorage.getItem('username');
 
     const toggleEditMode = () => setIsEditMode(!isEditMode);
 
@@ -54,55 +60,10 @@ export function FoodItem({ id, name, description, price, imgUrl, onDelete, onSav
 
     return (
         <>
-            <Card className="h-100">
-                {/* Existing Card Implementation */}
-                <Card.Body className="d-flex flex-column">
-                    <Button variant="outline-secondary" size="sm" onClick={toggleEditMode} className="mb-2">
-                        {isEditMode ? "Cancel" : "Edit"}
-                    </Button>
-                    {isEditMode ? (
-                        <>
-                            <img
-                                src={editableImgUrl}
-                                alt={name}
-                                height="200px"
-                                style={{ objectFit: "cover", marginBottom: '1rem' }}
-                            />
-                            <FormControl type="file" onChange={handleFileChange} />
-                            <div className="mb-3">
-                                <label>Name:</label>
-                                <FormControl
-                                    type="text"
-                                    value={editableName}
-                                    onChange={(e) => setEditableName(e.target.value)}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label>Description:</label>
-                                <FormControl
-                                    as="textarea"
-                                    value={editableDescription}
-                                    onChange={(e) => setEditableDescription(e.target.value)}
-                                />
-                            </div>
-                            <div className="mb-3">
-                                <label>Price:</label>
-                                <FormControl
-                                    type="number"
-                                    value={editablePrice}
-                                    onChange={(e) => setEditablePrice(parseFloat(e.target.value))}
-                                />
-                            </div>
-                            <Button style={{marginBottom: '1rem'}} variant="primary" onClick={openConfirmModal}>Save Changes</Button>
-                            {onDelete && (
-                                <Button variant="danger" onClick={openDeleteConfirmModal}>
-                                    Delete Item
-                                </Button>
-                            )}
-                        </>
-                    ) : (
-                        <>
-                            <Card.Img 
+            {userType === 'customer' ? (
+                <>
+                    <Card className="h-100">
+                        <Card.Img 
                             variant="top"
                             src={imgUrl}
                             alt={name}
@@ -111,15 +72,99 @@ export function FoodItem({ id, name, description, price, imgUrl, onDelete, onSav
                         />
                         <Card.Body className="d-flex flex-column">
                             <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
-                                <span className="fs-2">{editableName}</span>
-                                <span className="ms-2 text-muted">{formatCurrency(editablePrice)}</span>
+                                <span className="fs-2">{name}</span>
+                                <span className="ms-2 text-muted">{formatCurrency(price)}</span>
                             </Card.Title>
-                            <Card.Title className="text-muted" style={{ fontSize: '.90rem' }}>{editableDescription}</Card.Title>
+                            <Card.Title className="text-muted" style={{ fontSize: '.90rem' }}>{description}</Card.Title>
+                            <div className="mt-auto">
+                                {quantity === 0 ? (
+                                    <Button className="w-100" onClick={() => increaseItemQuantity(id)}>+ Add To Cart</Button>
+                                ) : <div className="d-flex align-items-center flex-column" style={{ gap: ".5rem" }}>
+                                    <div className="d-flex align-items-center flex-center" style={{ gap: ".5rem" }}>
+                                        <Button onClick={() => decreaseItemQuantity(id)}>-</Button>
+                                            <div>
+                                                <span className="fs-3">{quantity}</span> in cart
+                                            </div>
+                                        <Button onClick={() => increaseItemQuantity(id)}>+</Button>
+                                    </div>
+                                    <Button variant="danger" size="sm" onClick={() => removeFromCart(id)}>
+                                        Remove
+                                    </Button>
+                                </div>}
+                            </div>
                         </Card.Body>
-                        </>
-                    )}
-                </Card.Body>
-            </Card>
+                    </Card>
+                </>
+            ) : (
+                <>
+                    <Card className="h-100">
+                        {/* Existing Card Implementation */}
+                        <Card.Body className="d-flex flex-column">
+                            <Button variant="outline-secondary" size="sm" onClick={toggleEditMode} className="mb-2">
+                                {isEditMode ? "Cancel" : "Edit"}
+                            </Button>
+                            {isEditMode ? (
+                                <>
+                                    <img
+                                        src={editableImgUrl}
+                                        alt={name}
+                                        height="200px"
+                                        style={{ objectFit: "cover", marginBottom: '1rem' }}
+                                    />
+                                    <FormControl type="file" onChange={handleFileChange} />
+                                    <div className="mb-3">
+                                        <label>Name:</label>
+                                        <FormControl
+                                            type="text"
+                                            value={editableName}
+                                            onChange={(e) => setEditableName(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label>Description:</label>
+                                        <FormControl
+                                            as="textarea"
+                                            value={editableDescription}
+                                            onChange={(e) => setEditableDescription(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="mb-3">
+                                        <label>Price:</label>
+                                        <FormControl
+                                            type="number"
+                                            value={editablePrice}
+                                            onChange={(e) => setEditablePrice(parseFloat(e.target.value))}
+                                        />
+                                    </div>
+                                    <Button style={{marginBottom: '1rem'}} variant="primary" onClick={openConfirmModal}>Save Changes</Button>
+                                    {onDelete && (
+                                        <Button variant="danger" onClick={openDeleteConfirmModal}>
+                                            Delete Item
+                                        </Button>
+                                    )}
+                                </>
+                            ) : (
+                                <>
+                                    <Card.Img 
+                                    variant="top"
+                                    src={imgUrl}
+                                    alt={name}
+                                    height="200px"
+                                    style={{ objectFit: "cover" }}
+                                />
+                                <Card.Body className="d-flex flex-column">
+                                    <Card.Title className="d-flex justify-content-between align-items-baseline mb-4">
+                                        <span className="fs-2">{editableName}</span>
+                                        <span className="ms-2 text-muted">{formatCurrency(editablePrice)}</span>
+                                    </Card.Title>
+                                    <Card.Title className="text-muted" style={{ fontSize: '.90rem' }}>{editableDescription}</Card.Title>
+                                </Card.Body>
+                                </>
+                            )}
+                        </Card.Body>
+                    </Card>
+                </>
+            )}
 
             <Modal show={showConfirmModal} onHide={closeConfirmModal}>
                 <Modal.Header closeButton>
