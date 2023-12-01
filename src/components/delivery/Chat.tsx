@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Container, Row, Col, Card, ListGroup, Form, Button, InputGroup, Badge, Image } from 'react-bootstrap';
 import { BsFillChatDotsFill, BsImageFill } from 'react-icons/bs';
+import { Dropdown } from 'react-bootstrap';
 
 type Message = {
   sender: 'user' | 'other';
@@ -9,11 +10,35 @@ type Message = {
   timestamp: string;
 };
 
+const quickReplies = [
+    "Hello, I am here!",
+    "I am coming down now.",
+    "I am on the way.",
+    "I am here, please come down.",
+    "I am here, please open the door.",
+  ];  
+
 export function Chat() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const chatBoxRef = useRef<HTMLDivElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [showQuickReplies, setShowQuickReplies] = useState(false);
+
+  const handleNewMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const message = e.target.value;
+    setNewMessage(message);
+
+    // 显示快速回复选项当用户输入"/"
+    setShowQuickReplies(message.startsWith("/"));
+  };
+
+  const handleQuickReply = (reply: string) => {
+    addMessage('user', 'text', reply);
+    setNewMessage('');
+    setShowQuickReplies(false);
+    simulateReply();
+  };
 
   const handleSendMessage = () => {
     if (newMessage.trim()) {
@@ -91,26 +116,35 @@ export function Chat() {
               ))}
             </ListGroup>
             <Card.Footer>
-              <InputGroup>
+                <InputGroup>
                 <Form.Control
-                  type="text"
-                  placeholder="Type a message..."
-                  value={newMessage}
-                  onChange={(e) => setNewMessage(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                    type="text"
+                    placeholder="Type a message..."
+                    value={newMessage}
+                    onChange={handleNewMessageChange}
+                    onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
                 />
+                {showQuickReplies && (
+                    <Dropdown.Menu show>
+                    {quickReplies.map((reply, index) => (
+                        <Dropdown.Item key={index} onClick={() => handleQuickReply(reply)}>
+                        {reply}
+                        </Dropdown.Item>
+                    ))}
+                    </Dropdown.Menu>
+                )}
                 <Button variant="outline-secondary" onClick={() => fileInputRef.current?.click()}>
-                  <BsImageFill />
+                    <BsImageFill />
                 </Button>
                 <Button variant="outline-secondary" onClick={handleSendMessage}>Send</Button>
-              </InputGroup>
-              <Form.Control
+                </InputGroup>
+                <Form.Control
                 type="file"
                 ref={fileInputRef}
                 style={{ display: 'none' }}
                 accept="image/*"
                 onChange={handleImageUpload}
-              />
+                />
             </Card.Footer>
           </Card>
         </Col>
