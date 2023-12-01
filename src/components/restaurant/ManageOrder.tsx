@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Table, Button, Modal, Form } from 'react-bootstrap';
-import ordersData from '../../json/order.json';
+import initialOrdersData from '../../json/order.json';
+import { Alert } from 'reactstrap';
+import { useNavigate } from 'react-router-dom';
 
 type OrderItemType = {
   name: string;
@@ -15,31 +17,6 @@ type OrderType = {
   status: 'Pending' | 'Preparing' | 'Ready for Delivery' | 'Completed' | 'Rejected';
 };
 
-const mockOrders: OrderType[] = [
-  { 
-    id: 1, 
-    customer: 'John Doe', 
-    items: [
-      { name: 'Pizza', quantity: 1 },
-      { name: 'Soda', quantity: 2 }
-    ], 
-    total: '20.00', 
-    status: 'Preparing' 
-  },
-  { 
-    id: 2, 
-    customer: 'Jane Smith', 
-    items: [
-      { name: 'Burger', quantity: 1 },
-      { name: 'Water', quantity: 1 }
-    ], 
-    total: '15.00', 
-    status: 'Pending' 
-  },
-  // 更多订单...
-];
-
-
 const statusColors: { [key in OrderType['status']]: string } = {
   Pending: 'warning',
   Preparing: 'info',
@@ -48,10 +25,29 @@ const statusColors: { [key in OrderType['status']]: string } = {
   Rejected: 'danger'
 };
 
+const initialOrders : OrderType[] = initialOrdersData as OrderType[];
+
 export function ManageOrder() {
-  const [orders, setOrders] = useState<OrderType[]>(mockOrders);
+  const [orders, setOrders] = useState<OrderType[]>(initialOrders);
   const [selectedOrder, setSelectedOrder] = useState<OrderType | null>(null);
   const [showModal, setShowModal] = useState(false);
+  const [newOrderAlert, setNewOrderAlert] = useState(false);
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false);
+  const [confirmAction, setConfirmAction] = useState<'accept' | 'reject' | null>(null);
+  const [orderToModify, setOrderToModify] = useState<number | null>(null);
+  const [rejectReason, setRejectReason] = useState('');
+  const [estimatedTime, setEstimatedTime] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // 检查是否有新订单
+    const hasNewOrder = orders.some(order => order.status === 'Pending');
+    setNewOrderAlert(hasNewOrder);
+  }, [orders]);
+
+  const handleStatusClick = (orderId: number) => {
+    navigate(`/order-tracking/${orderId}`);
+  };
 
   const handleStatusChange = (orderId: number, newStatus: string) => {
     const validStatuses = ['Pending', 'Preparing', 'Ready for Delivery', 'Completed', 'Rejected'];
@@ -69,12 +65,40 @@ export function ManageOrder() {
     return items.map(item => `${item.name} x${item.quantity}`).join(', ');
   };
 
-  const handleAcceptOrder = (orderId: number) => {
-    // 处理接受订单逻辑
+  const handleOpenConfirmationModal = (orderId: number, action: 'accept' | 'reject') => {
+    setOrderToModify(orderId);
+    setConfirmAction(action);
+    setShowConfirmationModal(true);
+  };
+  
+  const handleConfirmAction = () => {
+    if (confirmAction === 'accept') {
+      handleAcceptOrder(orderToModify, estimatedTime);
+      setEstimatedTime(''); // 重置预计时间
+    } else if (confirmAction === 'reject') {
+      handleRejectOrder(orderToModify, rejectReason);
+    }
+    setShowConfirmationModal(false);
+    setRejectReason(''); // 清空拒绝理由
+  };
+  
+
+  const handleAcceptOrder = (orderId: number | null, estimatedTime: string) => {
+    setOrders(orders.map(order =>
+      order.id === orderId ? { ...order, status: 'Preparing' } : order
+    ));
   };
 
-  const handleRejectOrder = (orderId: number) => {
-    // 处理拒绝订单逻辑
+  const handleRejectOrder = (orderId: number | null, reason: string) => {
+    setOrders(orders.map(order =>
+      order.id === orderId ? { ...order, status: 'Rejected' } : order
+    ));
+  };
+
+  const confirmOrder = (orderId: number, accept: boolean) => {
+    const newStatus = accept ? 'Preparing' : 'Rejected';
+    handleStatusChange(orderId, newStatus);
+    // 向客户发送订单确认或拒绝的信息
   };
 
   const openOrderModal = (order: OrderType) => {
@@ -88,6 +112,7 @@ export function ManageOrder() {
 
   return (
     <div className="ManageOrder">
+      {newOrderAlert && <Alert variant="info">You have new orders!</Alert>}
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -107,15 +132,15 @@ export function ManageOrder() {
               <td>{getOrderItemsString(order.items)}</td>
               <td>${order.total}</td>
               <td>
-                <span className={`badge bg-${statusColors[order.status]}`}>
-                {order.status}
+                <span className={`badge bg-${statusColors[order.status]}`} style={{cursor: 'pointer'}} onClick={() => handleStatusClick(order.id)}>
+                  {order.status}
                 </span>
               </td>
               <td>
                 {order.status === 'Pending' && (
                   <>
-                    <Button variant="success" onClick={() => handleAcceptOrder(order.id)}>Accept</Button>
-                    <Button variant="danger" onClick={() => handleRejectOrder(order.id)}>Reject</Button>
+                    <Button variant="success" onClick={() => handleOpenConfirmationModal(order.id, 'accept')}>Accept</Button>
+                    <Button variant="danger" onClick={() => handleOpenConfirmationModal(order.id, 'reject')}>Reject</Button>
                   </>
                 )}
                 {order.status !== 'Pending' && (
@@ -168,6 +193,45 @@ export function ManageOrder() {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={closeOrderModal}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+
+      <Modal show={showConfirmationModal} onHide={() => setShowConfirmationModal(false)}>
+        <Modal.Header closeButton>
+          <Modal.Title>Confirm Order Acceptance</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {confirmAction === 'accept' && (
+            <Form.Group className="mb-3">
+              <Form.Label>Estimated Preparation Time</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter estimated time (e.g., 30 minutes)"
+                value={estimatedTime}
+                onChange={(e) => setEstimatedTime(e.target.value)}
+              />
+            </Form.Group>
+          )}
+          {confirmAction === 'reject' && (
+            <Form.Group className="mb-3">
+              <Form.Label>Reason for Rejection</Form.Label>
+              <Form.Control
+                as="textarea"
+                placeholder="Enter reason"
+                value={rejectReason}
+                onChange={(e) => setRejectReason(e.target.value)}
+              />
+            </Form.Group>
+          )}
+          Are you sure you want to {confirmAction === 'accept' ? 'accept' : 'reject'} this order?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={() => setShowConfirmationModal(false)}>
+            Cancel
+          </Button>
+          <Button variant={confirmAction === 'accept' ? 'success' : 'danger'} onClick={handleConfirmAction}>
+            {confirmAction === 'accept' ? 'Accept' : 'Reject'}
+          </Button>
         </Modal.Footer>
       </Modal>
     </div>

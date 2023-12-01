@@ -10,8 +10,11 @@ import {
   DropdownItem,
 } from 'reactstrap';
 import { Button } from "react-bootstrap";
+import { MdOutlineRestaurantMenu, MdMenuBook } from "react-icons/md";
+import { BiSolidFoodMenu } from "react-icons/bi";
 import { FaShoppingCart, FaMapMarkerAlt, FaUserAlt } from 'react-icons/fa';
 import { FaHeart, FaHistory, FaUser, FaSignOutAlt } from 'react-icons/fa';
+import { CiDeliveryTruck } from "react-icons/ci";
 import { useShoppingCart } from '../context/ShoppingCartContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -83,13 +86,16 @@ export function Header() {
           </>
         ) : (
           <>
-            {userType === 'restaurant' ? (
+            {userType === 'restaurant' ? ( 
               <>
                 <NavLink href="/manage-order" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
-                  <Button color="link" style={{ color: '#333', backgroundColor:'#FFFFFF', border:'none', textDecoration: 'none' }}><FaMapMarkerAlt/>Manage Order</Button>
+                  <Button color="link" style={{ color: '#333', backgroundColor:'#FFFFFF', border:'none', textDecoration: 'none' }}><MdMenuBook />Manage Order</Button>
                 </NavLink>
                 <NavLink href="/manage-menus" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
-                  <Button color="link" style={{ color: '#333', backgroundColor:'#FFFFFF', border:'none', textDecoration: 'none' }}><FaMapMarkerAlt/>Manage Menu</Button>
+                  <Button color="link" style={{ color: '#333', backgroundColor:'#FFFFFF', border:'none', textDecoration: 'none' }}><MdOutlineRestaurantMenu />Manage Menu</Button>
+                </NavLink>
+                <NavLink href="/restaurant-summary" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
+                  <Button color="link" style={{ color: '#333', backgroundColor:'#FFFFFF', border:'none', textDecoration: 'none' }}><BiSolidFoodMenu />Restaurant Summary</Button>
                 </NavLink>
                 <Nav>
                   <UncontrolledDropdown nav inNavbar>
@@ -119,7 +125,37 @@ export function Header() {
               </>
             ) : (
               <> {/*delivery*/}
-               
+                <NavLink href="/delivery-instructions" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
+                  <Button color="link" style={{ color: '#333', backgroundColor:'#FFFFFF', border:'none', textDecoration: 'none' }}><CiDeliveryTruck />Delivery</Button>
+                </NavLink>
+                <NavLink href="/order-updates" style={{ color: '#333', fontWeight: 'bold', fontSize: '1.5em' }}>
+                  <Button color="link" style={{ color: '#333', backgroundColor:'#FFFFFF', border:'none', textDecoration: 'none' }}><MdOutlineRestaurantMenu />Orders</Button>
+                </NavLink>
+                <Nav>
+                  <UncontrolledDropdown nav inNavbar>
+                    <DropdownToggle nav caret style={{ color: '#333' }}>
+                    <FaUserAlt/> My Profile
+                    </DropdownToggle>
+                    <DropdownMenu right style={{ right: '-20px' }}>
+                      <div style={{ fontWeight: 'bold', textAlign:'center', padding:'10px'}}>{username}</div>
+                    <DropdownItem divider />
+                    <NavLink href="/profile">
+                      <DropdownItem style={{ padding: '0 15px' }}>
+                        <FaUser style={{ marginRight: '10px' }} /> User info
+                      </DropdownItem>
+                    </NavLink>
+                    <DropdownItem divider />
+                    <NavLink onClick={() => {
+                      clearCart();
+                      setTimeout(handleLogout, 100)
+                    }}>
+                      <DropdownItem style={{ padding: '0 15px' }}>
+                        <FaSignOutAlt style={{ marginRight: '10px' }} /> Logout
+                      </DropdownItem>
+                    </NavLink>
+                    </DropdownMenu>
+                  </UncontrolledDropdown>
+                </Nav>
               </>
             )}
           </>

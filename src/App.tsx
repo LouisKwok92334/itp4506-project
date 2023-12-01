@@ -16,6 +16,10 @@ import { ShoppingCartProvider } from "./components/context/ShoppingCartContext";
 import { Feedback } from "./components/customer/Feedback";
 import { ManageUser } from "./components/restaurant/ManageUser";
 import { ManageOrder } from "./components/restaurant/ManageOrder";
+import { OrderTracking } from "./components/restaurant/OrderTracking";
+import { OrderUpdates } from "./components/delivery/OrderUpdates";
+import { Chat } from "./components/delivery/Chat";
+import { RestaurantSummary } from "./components/restaurant/RestaurantSummary";
 
 function AppRoutes() {
   return (
@@ -45,10 +49,14 @@ function App() {
           <Route path="/feedback" element={<Feedback />} />
           {/* delivery */}
           <Route path="/delivery-instructions" element={<DeliveryInstructions />} />
+          <Route path="/order-updates" element={<OrderUpdates />} />
+          <Route path="/chat" element={<Chat />} />
           {/* restaurant */}
           <Route path="/manage-users" element={<ManageUser />} />
           <Route path="/manage-order" element={<ManageOrder />} />
           <Route path="/manage-menus" element={<ManageMenus />} />
+          <Route path="/restaurant-summary" element={<RestaurantSummary />} />
+          <Route path="/order-tracking/:orderId" element={<OrderTracking />} />
         </Route>
       </Routes>
       <Footer />
